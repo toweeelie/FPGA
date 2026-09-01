@@ -1,0 +1,44 @@
+# Vivado generated files and directories
+*.Xil/
+.Xil/
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.srcs/sources_1/bd/*/hdl/
+*.srcs/sources_1/bd/*/ip/*/
+*.srcs/sources_1/bd/*/sim/
+*.srcs/sources_1/bd/*/synth/
+*.srcs/sources_1/bd/*/.Xil/
+
+# Vivado logs, journals, and temporary files
+*.jou
+*.log
+*.str
+*.zip
+*.wdb
+*.wcfg
+*.wdf
+*.dcp
+*.rpt
+*.rpx
+*.pb
+*.xml
+*.ltx
+*.bin
+*.mcs
+*.bit
+*.bmm
+*.eda
+*.xpr.backup
+*.xpr.bak
+
+# Vivado user-specific settings
+*.user
+*.user.*
+*.hwdef
+*.lpr
+*.webtalk
+*.webtalk.jou
