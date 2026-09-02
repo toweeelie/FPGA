@@ -39,3 +39,28 @@
 - Lines 31-36 of [latch.sv](project_1.srcs/sources_1/new/latch.sv) file contain `if` statement with preprocessor definition `FIX_LATCH`.
 - Mentioned before preprocessor definition is disabled by default at line 22 of the source, which makes `lout` value undefined in case if `linp0` is 0. Synthesis warns about inferring latch. 
 - `else` part is activated when line 22 is uncommented. This makes `lout` value defined in all cases. Synthesis warning is cleared.
+
+
+# Counter task
+
+## Steps to reproduce:
+
+- Open project_1.xpr with Vivado
+- Set counter as top simulation source
+- Run behavioral simulation
+- Restart simulation
+- Run Tcl script [counter.tcl](project_1.srcs/sources_1/new/counter.tcl)
+- Run whole simulation
+
+## Results:
+
+![Counter](counter.png)
+
+## Explanation:
+
+- `cout` output is 4-bit bus, each bit should be connected to appropriate LED.
+- Default value of `cout` is 0, as can be seen picture above.
+- `cout` value is incremented each time `clock` has positve edge change
+- Hexadecimal representation of `cout` shows that counter is counting from 0x0 to 0xf and sets to 0x0 after.
+- Binary representation of `cout` shows that LEDS shoud show exactly the same count as hex representation.
+- `reset` signal is set twice per whole simulation during different `cout` current values, both times `cout` resets to 0 at a moment of positive edge of `reset` and holds this value all the time `reset` is active.
