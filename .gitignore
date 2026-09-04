@@ -42,3 +42,5 @@
 *.lpr
 *.webtalk
 *.webtalk.jou
+
+**/xsim.dir/*
