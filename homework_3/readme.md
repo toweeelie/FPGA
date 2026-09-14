@@ -1,17 +1,17 @@
-# Lock Controller
+# 1. Lock Controller
 
 ## Steps to reproduce
 
-- Open `project_3.xpr` with Vivado
+- Open [project_3.xpr](project_3/project_3.xpr) with Vivado
 - Set `tb_lock_controller` as top simulation source
 - Run behavioral simulation
 - check `tcl console` for results
 
-## Results:
+## Results
 
-![lock](lock_results.png)
+![lock](project_3/lock_results.png)
 
-## Explanation:
+## Explanation
 - Project contain 4 source files:
     - [lock_controller.sv](project_3/project_3.srcs/sources_1/new/lock_controller.sv) - main controller code
     - [lock_controller.vh](project_3/project_3.srcs/sources_1/new/lock_controller.vh) - header file with states enumeration to share between design and testbench
@@ -28,3 +28,24 @@
     - 1st button press failure - button pressed once, final state is `LOCKED`
     - 2nd button press failure - button pressed 2 times, one intermedite state is "good", final state is `LOCKED`
     - 3rd button press failure - button pressed 3 times, two intermediete states are "good", final state is `LOCKED`
+
+# 2. TIMING SUMMARY REPORT
+
+## Steps to reproduce
+
+- Open [project_4.xpr](project_4/project_4.xpr) with Vivado
+
+## Results
+
+## Explanation
+
+# 3. PIPELINING
+
+## Steps to reproduce
+
+- Open [project_5.xpr](project_5/project_5.xpr) with Vivado
+- Open [project_6.xpr](project_6/project_6.xpr) with Vivado
+
+## Results
+
+## Explanation
