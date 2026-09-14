@@ -18,7 +18,7 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`define BTN_BOUNCE 3
 
 module tb_lock_controller();
 
@@ -26,18 +26,25 @@ module tb_lock_controller();
     
     logic clk;
     logic rst;
-    logic [3:0] digit_in;
+    logic [3:0] digit_raw;
+    logic [3:0] digit_clean;
     logic unlocked_led;
+    
+    debounce #(.COUNT_MAX(`BTN_BOUNCE)) dbn(
+        .clk(clk),
+        .btn_raw(digit_raw),
+        .btn_clean(digit_clean)
+    );
     
     lock_controller dut(
         .clk(clk),
         .rst(rst),
-        .digit_in(digit_in),
+        .digit_in(digit_clean),
         .unlocked_led(unlocked_led)
     );
     
     initial clk = 0;
-    always #5 clk = ~clk;
+    always #2 clk = ~clk;
     
     task automatic check_states(
         input logic [20*8-1:0] name,
@@ -56,8 +63,18 @@ module tb_lock_controller();
         
         // iterate over number of inputs and check state
         for (int i = 0; i < digits.size(); i++) begin
-            digit_in = digits[i];
-            @(posedge clk) #1;
+            // button bounce imitation
+            for (int j = 0; j < `BTN_BOUNCE; j++) begin
+                digit_raw = 0;
+                @(posedge clk) #1;
+                digit_raw = digits[i];
+                @(posedge clk) #1;
+            end
+            // button steady state
+            for (int j = 0; j < `BTN_BOUNCE; j++) begin
+                @(posedge clk) #1;
+                @(posedge clk) #1;
+            end
             total_res = total_res && (dut.state === expected_states[i]);
             $display("key = %d, tst=%s, ref=%s", digits[i], dut.state, expected_states[i]);
         end
