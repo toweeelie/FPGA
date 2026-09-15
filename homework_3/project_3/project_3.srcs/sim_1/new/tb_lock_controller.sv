@@ -19,22 +19,23 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 `define BTN_BOUNCE 3
+import lock_controller_pkg::*;
 
 module tb_lock_controller();
 
-    `include "lock_controller.vh"
-    
     logic clk;
     logic rst;
     logic [3:0] digit_raw;
     logic [3:0] digit_clean;
     logic unlocked_led;
     
-    debounce #(.COUNT_MAX(`BTN_BOUNCE)) dbn(
-        .clk(clk),
-        .btn_raw(digit_raw),
-        .btn_clean(digit_clean)
-    );
+    for (int i = 0; i < 4; i++) begin
+        debounce #(.COUNT_MAX(`BTN_BOUNCE)) dbn(
+            .clk(clk),
+            .btn_raw(digit_raw[i]),
+            .btn_clean(digit_clean[i])
+        );
+    end
     
     lock_controller dut(
         .clk(clk),

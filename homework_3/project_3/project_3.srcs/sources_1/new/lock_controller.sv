@@ -19,6 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+import lock_controller_pkg::*;
 
 module lock_controller(
     input logic clk,
@@ -26,9 +27,7 @@ module lock_controller(
     input logic [3:0] digit_in,
     output logic unlocked_led
     );
-    
-    `include "lock_controller.vh"
-    
+
     state_t state = LOCKED, next_state = LOCKED;
     
     always_ff @(posedge clk or posedge rst) begin

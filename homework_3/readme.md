@@ -1,51 +1,58 @@
 # 1. Lock Controller
 
-## Steps to reproduce
+## Reproduction Steps
 
 - Open [project_3.xpr](project_3/project_3.xpr) with Vivado
 - Set `tb_lock_controller` as top simulation source
 - Run behavioral simulation
-- check `tcl console` for results
+- Check the Tcl Console for the results
 
 ## Results
 
 ![lock](project_3/lock_results.png)
 
-## Explanation
-- Project contain 4 source files:
+## Description
+
+- The project contains four source files:
     - [lock_controller.sv](project_3/project_3.srcs/sources_1/new/lock_controller.sv) - main controller code
-    - [lock_controller.vh](project_3/project_3.srcs/sources_1/new/lock_controller.vh) - header file with states enumeration to share between design and testbench
+    - [lock_controller_pkg.sv](project_3/project_3.srcs/sources_1/new/lock_controller_pkg.sv) - SystemVerilog package with the FSM states enumeration shared between design and testbench
     - [debounce.sv](project_3/project_3.srcs/sources_1/new/debounce.sv) - debounce counter module to eliminate physical button jitter
     - [tb_lock_controller.sv](project_3/project_3.srcs/sim_1/new/tb_lock_controller.sv) - testbench for controller
-- Main code file contain 3 `always` blocks for lock controller finite state machine (FSM):
-    - sync block: reset or set next state of FSM
-    - states logic block: describes conditions for state changes
-    - output logic block: assings output based on current state of FSM
-- Testbench code consists of clock generation, lock controller instance as device under test (DUT), debounce module instance (filters out physical button jitter), task for checking numerous combinations of input sequences and main block with several task calls.
-- Task `check_states` resets device under test (DUT) and iterates over all input values for `digit_in` of DUT. Each iteration imitates physical button pressing and comparison of DUT response. Pressing imitation is implemented with random changing of `digit_raw` signal during `BTN_BOUNCE` cycles and holding proper value during next `BTN_BOUNCE` cycles. The default value of `BTN_BOUNCE` is kept small to reduce simulation time. Comparison stage compares current DUT state with corresponding expected state for current `digit_in` value and displays current and expected values of `digit_in` and `state`. Each comparison sets `total_res` variable to 0 in case of failure. Aggregated comparison result based on final `total_res` value is displayed at the end of each task call. 
-- Testbench calls task 4 times:
-    - "good" combination - when final state is `UNLOCKED` 
-    - 1st button press failure - button pressed once, final state is `LOCKED`
-    - 2nd button press failure - button pressed 2 times, one intermedite state is "good", final state is `LOCKED`
-    - 3rd button press failure - button pressed 3 times, two intermediete states are "good", final state is `LOCKED`
+- The main controller contains three `always` blocks for the lock controller finite-state machine (FSM):
+    - The state-register block updates the current state and handles the asynchronous reset.
+    - The next-state logic block calculates state transitions from the current state and input digit.
+    - The output logic block assigns `unlocked_led` based on the current state.
+- The testbench generates the clock, instantiates the lock controller as the device under test (DUT), instantiates the debounce filters, and checks several input sequences.
+- The `check_states` task resets the DUT and iterates over the input digits. Each iteration simulates button bouncing by changing `digit_raw` for `BTN_BOUNCE` cycles, then holds the input stable for the same number of cycles. The task compares the DUT's current state with the expected state and reports the result for each sequence.
+- The testbench invokes the task four times:
+    - A correct sequence that ends in the `UNLOCKED` state
+    - An incorrect first digit that leaves the controller in the `LOCKED` state
+    - An incorrect second digit after a correct first digit
+    - An incorrect third digit after two correct digits
 
 # 2. TIMING SUMMARY REPORT
 
-## Steps to reproduce
+## Reproduction Steps
 
 - Open [project_4.xpr](project_4/project_4.xpr) with Vivado
+- Run synthesis and implementation to generate the timing report
 
 ## Results
 
-## Explanation
+## Description
+
+This project uses the ALU design and its clock constraint to inspect the timing summary, including the worst negative slack (WNS) value.
 
 # 3. PIPELINING
 
-## Steps to reproduce
+## Reproduction Steps
 
 - Open [project_5.xpr](project_5/project_5.xpr) with Vivado
 - Open [project_6.xpr](project_6/project_6.xpr) with Vivado
+- Run synthesis and implementation for both projects using the same clock constraint
 
 ## Results
 
-## Explanation
+## Description
+
+These projects contain plain and pipelined versions of the same expression. Their timing results can be compared to show how adding a pipeline stage affects the maximum operating frequency and WNS.

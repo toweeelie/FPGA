@@ -20,10 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module debounce #(COUNT_MAX = 200_000, SIZE = 4)(
+module debounce #(COUNT_MAX = 200_000)(
     input logic clk,
-    input logic [SIZE-1:0] btn_raw,
-    output logic [SIZE-1:0] btn_clean = 0
+    input logic btn_raw,
+    output logic btn_clean
 );
     logic [$clog2(COUNT_MAX)-1:0] counter = 0;
     always_ff@(posedge clk) begin
