@@ -23,7 +23,7 @@
 module debounce #(COUNT_MAX = 200_000)(
     input logic clk,
     input logic btn_raw,
-    output logic btn_clean
+    output logic btn_clean = 0
 );
     logic [$clog2(COUNT_MAX)-1:0] counter = 0;
     always_ff@(posedge clk) begin

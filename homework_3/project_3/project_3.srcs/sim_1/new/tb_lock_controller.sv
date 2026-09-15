@@ -29,14 +29,12 @@ module tb_lock_controller();
     logic [3:0] digit_clean;
     logic unlocked_led;
     
-    for (int i = 0; i < 4; i++) begin
-        debounce #(.COUNT_MAX(`BTN_BOUNCE)) dbn(
-            .clk(clk),
-            .btn_raw(digit_raw[i]),
-            .btn_clean(digit_clean[i])
-        );
-    end
-    
+    debounce #(.COUNT_MAX(`BTN_BOUNCE)) dbn [3:0] (
+        .clk(clk), 
+        .btn_raw(digit_raw[3:0]),
+        .btn_clean(digit_clean[3:0])
+    );
+
     lock_controller dut(
         .clk(clk),
         .rst(rst),
@@ -64,20 +62,36 @@ module tb_lock_controller();
         
         // iterate over number of inputs and check state
         for (int i = 0; i < digits.size(); i++) begin
-            // button bounce imitation
+            // button bounce 
             for (int j = 0; j < `BTN_BOUNCE; j++) begin
                 digit_raw = 0;
                 @(posedge clk) #1;
                 digit_raw = digits[i];
                 @(posedge clk) #1;
             end
-            // button steady state
+            // button steady state "pressed"
             for (int j = 0; j < `BTN_BOUNCE; j++) begin
                 @(posedge clk) #1;
                 @(posedge clk) #1;
             end
+            
+            // check DUT state
             total_res = total_res && (dut.state === expected_states[i]);
             $display("key = %d, tst=%s, ref=%s", digits[i], dut.state, expected_states[i]);
+            
+            // button bounce 
+            for (int j = 0; j < `BTN_BOUNCE; j++) begin
+                digit_raw = 0;
+                @(posedge clk) #1;
+                digit_raw = digits[i];
+                @(posedge clk) #1;
+            end
+            // buttons steady state "released"
+            digit_raw = 0;
+            for (int j = 0; j < `BTN_BOUNCE; j++) begin
+                @(posedge clk) #1;
+                @(posedge clk) #1;
+            end
         end
         
         // display total result

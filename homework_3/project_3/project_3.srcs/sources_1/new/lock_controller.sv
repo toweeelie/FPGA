@@ -29,29 +29,32 @@ module lock_controller(
     );
 
     state_t state = LOCKED, next_state = LOCKED;
+    logic [3:0] prev_digit_in = 4'd0;
     
     always_ff @(posedge clk or posedge rst) begin
         state <= (rst)? LOCKED : next_state;
+        prev_digit_in <= digit_in;
     end
     
     always_comb begin
         next_state = state;
-        case (state)
-            LOCKED: 
-                next_state = (digit_in == 4'd4)? WAIT_D2 : LOCKED;  
-            WAIT_D2: 
-                next_state = (digit_in == 4'd6)? WAIT_D3 : LOCKED;
-            WAIT_D3: 
-                next_state = (digit_in == 4'd8)? UNLOCKED : LOCKED;
-            UNLOCKED: 
-                next_state = UNLOCKED;
-            default: 
-                next_state = LOCKED;
-        endcase
+        if ((digit_in != 0) && (digit_in != prev_digit_in)) // change state only if button was pressed
+            case (state)
+                LOCKED: 
+                    next_state = (digit_in == 4'd4)? WAIT_D2 : LOCKED;  
+                WAIT_D2: 
+                    next_state = (digit_in == 4'd6)? WAIT_D3 : LOCKED;
+                WAIT_D3: 
+                    next_state = (digit_in == 4'd8)? UNLOCKED : LOCKED;
+                UNLOCKED: 
+                    next_state = UNLOCKED;
+                default: 
+                    next_state = LOCKED;
+            endcase
     end
     
     always_comb begin
-        unlocked_led = (state == UNLOCKED)? 1 : 0;
+        unlocked_led = (state == UNLOCKED);
     end
     
 endmodule
