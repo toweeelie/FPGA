@@ -54,13 +54,19 @@ As shown in the screenshots, WNS decreases with increasing clock frequency (i.e.
 ## Reproduction Steps
 
 - Open [project_5.xpr](project_5/project_5.xpr) with Vivado
-- Open [project_6.xpr](project_6/project_6.xpr) with Vivado
-- Run synthesis and implementation for both projects using the same clock constraint
+- Check that file [expr_plain.v](project_5/project_5.srcs/sources_1/imports/Downloads/expr_plain.v) contain line 17 commented out (`PIPELINED` definition)
+- Check that constraits file exist [expr_plain.xdc](project_5/project_5.srcs/constrs_1/imports/Downloads/expr_plain.xdc) and contain 7ns clock period (this value was measured for the deliberately selected build target: xc7z020clg400-1)
+- Run implementation and ensure that current version doesn't meet timing requirements
+- Uncomment line 17 in [expr_plain.v](project_5/project_5.srcs/sources_1/imports/Downloads/expr_plain.v) file
+- Do not touch constraits file
+- Run implementation again and ensure that current version successfully meets timing requirements
 
 ## Results
-
-
+Before
+![before](project_5/screenshot_before.png)
+After
+![after](project_5/screenshot_after.png)
 
 ## Description
 
-These projects contain plain and pipelined versions of the same expression. Their timing results can be compared to show how adding a pipeline stage affects the maximum operating frequency and WNS.
+This project contains plain and pipelined versions of the same expression. The `PIPELINED` definition selects between the two versions. The timing results can be compared to demonstrate how adding a pipeline stage affects the maximum operating frequency and WNS.

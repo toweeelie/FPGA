@@ -4,4 +4,4 @@
 ## no set_input_delay/set_output_delay needed, because there is no
 ## port-to-register path left in the design to be unconstrained.
 
-create_clock -period 4.000 -name sys_clk [get_ports clk]
+create_clock -period 7.000 -name sys_clk [get_ports clk]
