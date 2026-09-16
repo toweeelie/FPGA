@@ -36,13 +36,18 @@
 ## Reproduction Steps
 
 - Open [project_4.xpr](project_4/project_4.xpr) with Vivado
-- Run synthesis and implementation to generate the timing report
+- Open [alu.xdc](project_4/project_4.srcs/constrs_1/new/alu.xdc) file and set clock period to 20, 15 and 10 ns subsequently
+- Run implementation for each of clock values to generate the timing reports
 
 ## Results
 
+![WNS_clk20ns](project_4/WNS_clk20ns.png)
+![WNS_clk15ns](project_4/WNS_clk15ns.png)
+![WNS_clk10ns](project_4/WNS_clk10ns.png)
+
 ## Description
 
-This project uses the ALU design and its clock constraint to inspect the timing summary, including the worst negative slack (WNS) value.
+As shown in the screenshots, WNS decreases with increasing clock frequency (i.e., with decreasing clock period).
 
 # 3. PIPELINING
 
@@ -53,6 +58,8 @@ This project uses the ALU design and its clock constraint to inspect the timing 
 - Run synthesis and implementation for both projects using the same clock constraint
 
 ## Results
+
+
 
 ## Description
 
