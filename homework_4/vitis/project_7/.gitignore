@@ -1,24 +1,37 @@
-# Ignore build output directory
-/build
-/export
+# Vitis workspace state
+/_ide/
+/.rigel_lopper/
+/**/_ide/
+/**/.clangd
+/**/compile_commands.json
 
-# Ignore object files and dependent files
-.o
-.d
+# Application and BSP build products
+/**/build/
+/**/Debug/
+/**/Release/
+/**/CMakeFiles/
+/**/cmake_install.cmake
+/**/CMakeCache.txt
+/**/build.ninja
+/**/.ninja_deps
+/**/.ninja_log
+/**/.buildstatus
+/**/.hash-map.txt
+*.o
+*.obj
+*.a
+*.elf
+*.elf.size
+*.map
 
-#Ignore logs folder and log files
-/logs
-.log
+# Regenerated platform content
+/platform/export/
+/platform/hw/sdt/
+/platform/*/*/bsp/
+/platform/zynq_fsbl/
 
-#Ignore lock files
-.lock
-
-.bin
-.pdi
-.vitisWorkspace.json
-
-_ide/logs
-_ide/.wsdata
-
-.obj
-.a
+# Logs and transient files
+*.log
+*.lock
+*.bin
+*.pdi
