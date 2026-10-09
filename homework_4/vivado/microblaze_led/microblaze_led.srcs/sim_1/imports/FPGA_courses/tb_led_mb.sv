@@ -41,16 +41,16 @@ module tb_led_mb();
     always #5 clk = ~clk;
     
     initial begin
-        rst = 1'b1;
+        rst = 1'b0;
         btn = 3'b000;
         sw = 1'b0;
         
         // Keep MicroBlaze in reset for several clock cycles.
         repeat (10) @(posedge clk);
-        rst = 1'b0;
+        rst = 1'b1;
 
         // Press start/stop after the application has initialized.
-        repeat (100) @(posedge clk);
+        repeat (400) @(posedge clk);
         btn = 3'b001;
         repeat (100) @(posedge clk);
         btn = 3'b000;
