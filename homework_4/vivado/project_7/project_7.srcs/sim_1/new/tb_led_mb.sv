@@ -37,33 +37,26 @@ module tb_led_mb();
     );
     
     
-    initial clk = 0;
-    always #2 clk = ~clk;
+    initial clk = 1'b0;
+    always #5 clk = ~clk;
     
     initial begin
+        rst = 1'b1;
+        btn = 3'b000;
+        sw = 1'b0;
         
-        btn = 0;
-        sw = 0;
-        
-        // reset system
-        @(posedge clk) #1;
-        rst = 1; 
-        @(posedge clk) #1;
-        rst = 0;  
-    
-    
-        // check start/stop btn
-        @(posedge clk) #100;
-        btn = 1;
-        @(posedge clk) #1000;
-        btn = 0;
-        
-        // check speed up button
-        
-        // check speed down button
-    
+        // Keep MicroBlaze in reset for several clock cycles.
+        repeat (10) @(posedge clk);
+        rst = 1'b0;
 
-    
+        // Press start/stop after the application has initialized.
+        repeat (100) @(posedge clk);
+        btn = 3'b001;
+        repeat (100) @(posedge clk);
+        btn = 3'b000;
+
+        // Run long enough to observe startup AXI reads and writes.
+        #20us;
         $finish;
     end
 endmodule

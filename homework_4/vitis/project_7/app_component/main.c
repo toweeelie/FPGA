@@ -8,7 +8,7 @@
 #define SW_BASEADDR    XPAR_AXI_GPIO_2_BASEADDR
 #define SPEED_MAX 8
 #define TIMER_ID 0
-#define STEP_TICKS (XPAR_AXI_TIMER_0_CLOCK_FREQUENCY/10) // 0.1 s per speed unit
+#define STEP_TICKS (XPAR_AXI_TIMER_0_CLOCK_FREQUENCY/1000) // 0.001 s per speed unit
 
 XGpio led_gpio, btn_gpio, sw_gpio;
 XTmrCtr axi_timer;
