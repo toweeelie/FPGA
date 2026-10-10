@@ -35,28 +35,36 @@ int main() {
     XGpio_SetDataDirection(&btn_gpio, 1, 0x7);
     XGpio_SetDataDirection(&sw_gpio,  1, 0x1);
 
-    u8 direction = 0; // 0 - forward; 1 - reverse
-    u8 speed = 0; // 0 - stop, greater and up to SPEED_MAX - run
+    u8 btn_prev_state = 0;  // state of the button during previous poll
+                            // (helps to exclude duplicated events)
+    u8 direction = 0;       // 0 - forward; 1 - reverse
+    u8 speed = 0;           // 0 - stop, greater and up to SPEED_MAX - run
     s8 current_led = 0;
     u32 last_tick = XTmrCtr_GetValue(&axi_timer, 0);
 
     while (1) {
         u32 btn_value = XGpio_DiscreteRead(&btn_gpio, 1);
         direction = XGpio_DiscreteRead(&sw_gpio, 1);
-        
-        if (btn_value & 0x1) // start/stop
-            speed = (speed)? 0 : 1;
-            
-        if (btn_value & 0x2) // speed up
-            if((speed>0) && (speed<(SPEED_MAX-1))){
-                speed++;
-            }
 
-        if (btn_value & 0x4) // speed down
-            if(speed>1) {
-                speed--;
-            }
+        if (!btn_value){
+            btn_prev_state = 0;
+        }
         
+        if (!btn_prev_state) {
+            if (btn_value & 0x1) // start/stop
+                speed = (speed)? 0 : 1;
+                
+            if (btn_value & 0x2) // speed up
+                if((speed>0) && (speed<(SPEED_MAX-1))){
+                    speed++;
+                }
+
+            if (btn_value & 0x4) // speed down
+                if(speed>1) {
+                    speed--;
+                }
+            btn_prev_state = btn_value;
+        }
         u32 now = XTmrCtr_GetValue(&axi_timer, 0);
         if (speed && (u32)(now - last_tick) >= MAX_STEP_TICKS/speed){
             last_tick = now;

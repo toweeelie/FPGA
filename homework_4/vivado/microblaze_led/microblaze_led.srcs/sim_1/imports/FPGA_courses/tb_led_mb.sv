@@ -48,15 +48,35 @@ module tb_led_mb();
         rst = 1'b1;
         
         // wait microblaze to enter polling loop 
-        #40us;
-
-        // Press start/stop after the application has initialized.
-        btn = 3'b001;
-        repeat (200) @(posedge clk);
-        btn = 3'b000;
-
-
-        #40us;
+        #25us;
+        
+        // run same testing procedure for 2 directions
+        for (int i=0; i<2; i++) begin
+            // start led runs (speed 1)
+            sw = i;
+            btn = 3'b001;
+            repeat (600) @(posedge clk);
+            btn = 3'b000;
+            #40us;
+            
+            // speed up led runs (speed 2)
+            btn = 3'b010;
+            repeat (600) @(posedge clk);
+            btn = 3'b000;
+            #40us;
+      
+            // speed down led runs (speed 1)
+            btn = 3'b100;
+            repeat (600) @(posedge clk);
+            btn = 3'b000;
+            #40us;      
+            
+            // stop led runs (speed 0)
+            btn = 3'b001;
+            repeat (600) @(posedge clk);
+            btn = 3'b000;
+            #40us;
+        end
         $finish;
     end
 endmodule
