@@ -1,0 +1,25 @@
+ --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
+ [10.10.2026, 14:52:04]: Build for app_component::build with id 'c321fef4-5122-41f4-8d2b-80a1c579d8ed' started.
+ --------------------------------------------------------------------------------
+ Command: cmd.exe /C set CC= && set CXX= && empyro.bat build_app -s c:\Users\NovokhatkoTaras\Work\FPGA\homework_4\vitis\microblaze_led\app_component\src -b c:\Users\NovokhatkoTaras\Work\FPGA\homework_4\vitis\microblaze_led\app_component\build
+ [INFO]: Starting Application build process
+ [INFO]: Building Application
+ [1/3] ==========Application Build Information ==========
+ Compiler Flags:   -mlittle-endian -mxl-soft-mul -mcpu=v11.0 -DSDT  -MMD -MP -specs=C:/Users/Novokhat
+ koTaras/Work/FPGA/homework_4/vitis/microblaze_led/platform/export/platform/sw/standalone_microblaze_
+ 0/Xilinx.spec -IC:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/microblaze_led/platform/export/p
+ latform/sw/standalone_microblaze_0/include -Wall -Wextra      -O0  -g3     -U__clang__  
+ Linker Flags:   -Wl,--no-relax  -Wl,--gc-sections      -Wl,-T -Wl,"C:/Users/NovokhatkoTaras/Work/FPG
+ A/homework_4/vitis/microblaze_led/app_component/src/lscript.ld" -L"C:/Users/NovokhatkoTaras/Work/FPG
+ A/homework_4/vitis/microblaze_led/app_component/src/" -L"C:/Users/NovokhatkoTaras/Work/FPGA/homework
+ _4/vitis/microblaze_led/platform/export/platform/sw/standalone_microblaze_0/lib/" -L"/" -Wl,--start-
+ group,-lxilstandalone,-lxiltimer,-lgloss,-lxil,-lgcc,-lc -Wl,--end-group
+ ===========================================
+ [2/3] Building C object CMakeFiles/app_component.elf.dir/C_/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/main.c.obj
+ [3/3] Linking C executable app_component.elf
+    text	   data	    bss	    dec	    hex	filename
+    7504	    254	   3538	  11296	   2c20	app_component.elf
+ Build Finished successfully
+ --------------------------------------------------------------------------------
+[10.10.2026, 14:52:09]: Build for app_component::build with id 'c321fef4-5122-41f4-8d2b-80a1c579d8ed' ended.

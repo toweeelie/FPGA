@@ -1,0 +1,346 @@
+ --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
+ [10.10.2026, 14:53:24]: Generate platform platform with id '1756d00d-d072-4eef-a1c8-d09f2a6b9d8b' started.
+ --------------------------------------------------------------------------------
+ -- The C compiler identification is GNU 13.3.0
+ -- The C compiler identification is GNU 13.3.0
+ -- The CXX compiler identification is GNU 13.3.0
+ -- The CXX compiler identification is GNU 13.3.0
+ -- Detecting C compiler ABI info
+ -- Detecting C compiler ABI info
+ -- Detecting C compiler ABI info - done
+ -- Detecting C compiler ABI info - done
+ -- Check for working C compiler: C:/AMDDesignTools/2025.2/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc.exe - skipped
+ -- Detecting C compile features
+ -- Check for working C compiler: C:/AMDDesignTools/2025.2/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc.exe - skipped
+ -- Detecting C compile features
+ -- Detecting C compile features - done
+ -- Detecting C compile features - done
+ -- Detecting CXX compiler ABI info
+ -- Detecting CXX compiler ABI info
+ -- Detecting CXX compiler ABI info - done
+ -- Detecting CXX compiler ABI info - done
+ -- Check for working CXX compiler: C:/AMDDesignTools/2025.2/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-g++.exe - skipped
+ -- Detecting CXX compile features
+ -- Detecting CXX compile features - done
+ -- Check for working CXX compiler: C:/AMDDesignTools/2025.2/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-g++.exe - skipped
+ -- Detecting CXX compile features
+ -- Detecting CXX compile features - done
+ -- The ASM compiler identification is GNU
+ -- The ASM compiler identification is GNU
+ -- Found assembler: C:/AMDDesignTools/2025.2/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc.exe
+ -- Found assembler: C:/AMDDesignTools/2025.2/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc.exe
+ -- Configuring done
+ -- Configuring done
+ -- Generating done
+ -- Build files have been written to: C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp
+ [INFO]: Building BSP
+ -- Generating done
+ -- Build files have been written to: C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp
+ [INFO]: Building BSP
+ [1/116] Building C object libsrc/coresightps_dcc/src/CMakeFiles/coresightps_dcc.dir/xcoresightpsdcc.c.obj
+ [2/116] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg.c.obj
+ [3/116] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg_intr.c.obj
+ [4/116] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg_sinit.c.obj
+ [5/116] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg_g.c.obj
+ [6/116] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg_hw.c.obj
+ [7/116] Building C object libsrc/dmaps/src/CMakeFiles/dmaps.dir/xdmaps_g.c.obj
+ [8/116] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg_selftest.c.obj
+ [9/116] Building C object libsrc/dmaps/src/CMakeFiles/dmaps.dir/xdmaps.c.obj
+ [10/116] Building C object libsrc/dmaps/src/CMakeFiles/dmaps.dir/xdmaps_sinit.c.obj
+ [11/116] Building C object libsrc/dmaps/src/CMakeFiles/dmaps.dir/xdmaps_hw.c.obj
+ [12/116] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio_extra.c.obj
+ [13/116] Building C object libsrc/dmaps/src/CMakeFiles/dmaps.dir/xdmaps_selftest.c.obj
+ [14/116] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio_intr.c.obj
+ [15/116] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio_g.c.obj
+ [16/116] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio.c.obj
+ [17/116] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio_sinit.c.obj
+ [18/116] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic_selftest.c.obj
+ [19/116] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio_selftest.c.obj
+ [20/116] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic_hw.c.obj
+ [21/116] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic_g.c.obj
+ [22/116] Building C object libsrc/scutimer/src/CMakeFiles/scutimer.dir/xscutimer.c.obj
+ [23/116] Linking C static library libsrc\coresightps_dcc\src\libcoresightps_dcc.a
+ [24/116] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic_intr.c.obj
+ [25/116] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic_sinit.c.obj
+ [26/116] Building C object libsrc/scutimer/src/CMakeFiles/scutimer.dir/xscutimer_g.c.obj
+ [27/116] Building C object libsrc/scuwdt/src/CMakeFiles/scuwdt.dir/xscuwdt.c.obj
+ [28/116] Building C object libsrc/scutimer/src/CMakeFiles/scutimer.dir/xscutimer_selftest.c.obj
+ [29/116] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic.c.obj
+ [30/116] Building C object libsrc/scutimer/src/CMakeFiles/scutimer.dir/xscutimer_sinit.c.obj
+ [31/116] Linking C static library libsrc\devcfg\src\libdevcfg.a
+ [32/116] Building C object libsrc/scuwdt/src/CMakeFiles/scuwdt.dir/xscuwdt_selftest.c.obj
+ [33/116] Building C object libsrc/scuwdt/src/CMakeFiles/scuwdt.dir/xscuwdt_g.c.obj
+ [34/116] Linking C static library libsrc\dmaps\src\libdmaps.a
+ [35/116] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_g.c.obj
+ [36/116] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_selftest.c.obj
+ [37/116] Linking C static library libsrc\gpio\src\libgpio.a
+ [38/116] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_intr.c.obj
+ [39/116] Building C object libsrc/scuwdt/src/CMakeFiles/scuwdt.dir/xscuwdt_sinit.c.obj
+ [40/116] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr.c.obj
+ [41/116] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_l.c.obj
+ [42/116] Building C object libsrc/xadcps/src/CMakeFiles/xadcps.dir/xadcps.c.obj
+ [43/116] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_sinit.c.obj
+ [44/116] Building C object libsrc/xadcps/src/CMakeFiles/xadcps.dir/xadcps_selftest.c.obj
+ [45/116] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_options.c.obj
+ [46/116] Building C object libsrc/xadcps/src/CMakeFiles/xadcps.dir/xadcps_intr.c.obj
+ [47/116] Building C object libsrc/xadcps/src/CMakeFiles/xadcps.dir/xadcps_g.c.obj
+ [48/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_assert.c.obj
+ [49/116] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_stats.c.obj
+ [50/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/print.c.obj
+ [51/116] Linking C static library libsrc\scugic\src\libscugic.a
+ [52/116] Building C object libsrc/xadcps/src/CMakeFiles/xadcps.dir/xadcps_sinit.c.obj
+ [53/116] ========== BSP Build Information ==========
+ Compiler PATH: C:/AMDDesignTools/2025.2/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc.exe
+ Compiler FLAGS:  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=C:/Users/Novokh
+ atkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/zynq_fsbl_bsp/Xilinx.spec -IC:/User
+ s/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/zynq_fsbl_bsp/include  -O2 
+ -g -Wall -Wextra -fno-tree-loop-distribute-patterns -DNDEBUG
+ ===========================================
+ ** The above flags are BSP level flags. Increase verbosity to see component specific flags **
+ ===========================================
+ [54/116] Linking C static library libsrc\scutimer\src\libscutimer.a
+ [55/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_testcache.c.obj
+ [56/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_testmem.c.obj
+ [57/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_printf.c.obj
+ [58/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_mem.c.obj
+ [59/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_util.c.obj
+ [60/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/outbyte.c.obj
+ [61/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_sutil.c.obj
+ [62/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_testio.c.obj
+ [63/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xplatform_info.c.obj
+ [64/116] Linking C static library libsrc\scuwdt\src\libscuwdt.a
+ [65/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/xcortexa9_g.c.obj
+ [66/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/intr/xinterrupt_wrap.c.obj
+ [67/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xpm_init.c.obj
+ [68/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/read.c.obj
+ [69/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/sbrk.c.obj
+ [70/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/cpputest_time.c.obj
+ [71/116] Linking C static library libsrc\tmrctr\src\libtmrctr.a
+ [72/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/inbyte.c.obj
+ [73/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/close.c.obj
+ [74/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/_sbrk.c.obj
+ [75/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/_exit.c.obj
+ [76/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/isatty.c.obj
+ [77/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/fcntl.c.obj
+ [78/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/unlink.c.obj
+ [79/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/getpid.c.obj
+ [80/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/open.c.obj
+ [81/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/_open.c.obj
+ [82/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/errno.c.obj
+ [83/116] Linking C static library libsrc\xadcps\src\libxadcps.a
+ [1/110] Building C object libsrc/coresightps_dcc/src/CMakeFiles/coresightps_dcc.dir/xcoresightpsdcc.c.obj
+ [2/110] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio.c.obj
+ [3/110] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg_intr.c.obj
+ [4/110] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg_hw.c.obj
+ [5/110] Building C object libsrc/dmaps/src/CMakeFiles/dmaps.dir/xdmaps_selftest.c.obj
+ [6/110] Building C object libsrc/dmaps/src/CMakeFiles/dmaps.dir/xdmaps_sinit.c.obj
+ [7/110] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg_g.c.obj
+ [8/110] Building C object libsrc/dmaps/src/CMakeFiles/dmaps.dir/xdmaps_hw.c.obj
+ [9/110] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg_selftest.c.obj
+ [10/110] Building C object libsrc/dmaps/src/CMakeFiles/dmaps.dir/xdmaps.c.obj
+ [11/110] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio_intr.c.obj
+ [12/110] Building C object libsrc/dmaps/src/CMakeFiles/dmaps.dir/xdmaps_g.c.obj
+ [13/110] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg_sinit.c.obj
+ [14/110] Building C object libsrc/devcfg/src/CMakeFiles/devcfg.dir/xdevcfg.c.obj
+ [15/110] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio_extra.c.obj
+ [16/110] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio_selftest.c.obj
+ [17/110] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic_g.c.obj
+ [18/110] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic_hw.c.obj
+ [19/110] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio_g.c.obj
+ [20/110] Building C object libsrc/gpio/src/CMakeFiles/gpio.dir/xgpio_sinit.c.obj
+ [21/110] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic_sinit.c.obj
+ [22/110] Linking C static library libsrc\coresightps_dcc\src\libcoresightps_dcc.a
+ [23/110] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic_selftest.c.obj
+ [24/110] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic.c.obj
+ [25/110] Building C object libsrc/scugic/src/CMakeFiles/scugic.dir/xscugic_intr.c.obj
+ [26/110] Building C object libsrc/scutimer/src/CMakeFiles/scutimer.dir/xscutimer_sinit.c.obj
+ [27/110] Building C object libsrc/scutimer/src/CMakeFiles/scutimer.dir/xscutimer.c.obj
+ [28/110] Building C object libsrc/scutimer/src/CMakeFiles/scutimer.dir/xscutimer_g.c.obj
+ [29/110] Building C object libsrc/scutimer/src/CMakeFiles/scutimer.dir/xscutimer_selftest.c.obj
+ [30/110] Building C object libsrc/scuwdt/src/CMakeFiles/scuwdt.dir/xscuwdt.c.obj
+ [31/110] Building C object libsrc/scuwdt/src/CMakeFiles/scuwdt.dir/xscuwdt_selftest.c.obj
+ [32/110] Linking C static library libsrc\dmaps\src\libdmaps.a
+ [33/110] Building C object libsrc/scuwdt/src/CMakeFiles/scuwdt.dir/xscuwdt_g.c.obj
+ [34/110] Building C object libsrc/scuwdt/src/CMakeFiles/scuwdt.dir/xscuwdt_sinit.c.obj
+ [35/110] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_intr.c.obj
+ [36/110] Linking C static library libsrc\devcfg\src\libdevcfg.a
+ [37/110] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr.c.obj
+ [38/110] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_options.c.obj
+ [39/110] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_l.c.obj
+ [40/110] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_g.c.obj
+ [41/110] Linking C static library libsrc\gpio\src\libgpio.a
+ [42/110] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_stats.c.obj
+ [43/110] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_selftest.c.obj
+ [44/110] Linking C static library libsrc\scugic\src\libscugic.a
+ [45/110] Building C object libsrc/xadcps/src/CMakeFiles/xadcps.dir/xadcps.c.obj
+ [46/110] Building C object libsrc/tmrctr/src/CMakeFiles/tmrctr.dir/xtmrctr_sinit.c.obj
+ [47/110] ========== BSP Build Information ==========
+ Compiler PATH: C:/AMDDesignTools/2025.2/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc.exe
+ Compiler FLAGS:  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=C:/Users/Novokh
+ atkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/
+ Xilinx.spec -IC:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/ps7_cortexa9_0/s
+ tandalone_ps7_cortexa9_0/bsp/include  -O2 -g -Wall -Wextra -fno-tree-loop-distribute-patterns -DNDEB
+ UG
+ ===========================================
+ ** The above flags are BSP level flags. Increase verbosity to see component specific flags **
+ ===========================================
+ [48/110] Building C object libsrc/xadcps/src/CMakeFiles/xadcps.dir/xadcps_g.c.obj
+ [49/110] Linking C static library libsrc\scutimer\src\libscutimer.a
+ [50/110] Building C object libsrc/xadcps/src/CMakeFiles/xadcps.dir/xadcps_intr.c.obj
+ [51/110] Linking C static library libsrc\scuwdt\src\libscuwdt.a
+ [52/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_mem.c.obj
+ [53/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/print.c.obj
+ [54/110] Building C object libsrc/xadcps/src/CMakeFiles/xadcps.dir/xadcps_selftest.c.obj
+ [55/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_assert.c.obj
+ [56/110] Building C object libsrc/xadcps/src/CMakeFiles/xadcps.dir/xadcps_sinit.c.obj
+ [57/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_printf.c.obj
+ [58/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_testcache.c.obj
+ [59/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_testmem.c.obj
+ [60/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_sutil.c.obj
+ [61/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/unlink.c.obj
+ [62/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_testio.c.obj
+ [63/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/inbyte.c.obj
+ [64/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xpm_init.c.obj
+ [65/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/outbyte.c.obj
+ [66/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xplatform_info.c.obj
+ [67/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/_exit.c.obj
+ [68/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/fcntl.c.obj
+ [69/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/xil_util.c.obj
+ [70/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/xcortexa9_g.c.obj
+ [71/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/common/intr/xinterrupt_wrap.c.obj
+ [72/110] Linking C static library libsrc\tmrctr\src\libtmrctr.a
+ [73/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/read.c.obj
+ [74/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/sbrk.c.obj
+ [75/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/cpputest_time.c.obj
+ [76/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/isatty.c.obj
+ [77/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/_sbrk.c.obj
+ [78/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/close.c.obj
+ [79/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/open.c.obj
+ [80/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/fstat.c.obj
+ [81/110] Linking C static library libsrc\xadcps\src\libxadcps.a
+ [82/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/write.c.obj
+ [83/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/_open.c.obj
+ [84/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/write.c.obj[INFO]: Copying headers and built archives
+ [84/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/errno.c.obj[INFO]: Copying headers and built archives
+ [INFO]: Successfully built BSP. Generated libxil.a, libxilstandalone.a, libxiltimer.a
+ [85/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/abort.c.obj
+ [86/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/lseek.c.obj
+ [87/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/gettimeofday.c.obj
+ [88/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/getentropy.c.obj
+ [89/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/kill.c.obj
+ [90/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/getpid.c.obj
+ [91/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/xil_spinlock.c.obj
+ [92/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/putnum.c.obj
+ [93/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/time.c.obj
+ [94/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/xpm_counter.c.obj
+ [95/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/vectors.c.obj
+ [96/110] Building ASM object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/gcc/asm_vectors.S.obj
+ [97/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/xil_exception.c.obj
+ [98/110] Building ASM object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/gcc/boot.S.obj
+ [99/110] Building ASM object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/gcc/translation_table.S.obj
+ [100/110] Building ASM object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/gcc/xil-crt0.S.obj
+ [101/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/xil_cache.c.obj
+ [102/110] Building ASM object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/gcc/cpu_init.S.obj
+ [103/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/xil_misc_psreset_api.c.obj
+ [104/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/xil_mmu.c.obj
+ [105/110] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/xl2cc_counter.c.obj
+ [106/110] Archiving C static library libsrc/build_configs/gen_bsp/libxil.a
+ [107/110] Building C object libsrc/xiltimer/src/CMakeFiles/xiltimer.dir/core/default_timer/globaltimer_sleep_zynq.c.obj
+ [108/110] Building C object libsrc/xiltimer/src/CMakeFiles/xiltimer.dir/xiltimer.c.obj
+ [109/110] Linking C static library libsrc\standalone\src\libxilstandalone.a
+ [110/110] Linking C static library libsrc\xiltimer\src\libxiltimer.a
+ [INFO]: Successfully built BSP. Generated libxil.a, libxilffs.a, libxilrsa.a, libxilstandalone.a, libxiltimer.a
+ [85/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/fstat.c.obj
+ [86/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/abort.c.obj
+ [87/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/lseek.c.obj
+ [88/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/getentropy.c.obj
+ [89/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/kill.c.obj
+ [90/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/gettimeofday.c.obj
+ [91/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/gcc/time.c.obj
+ [92/116] Building ASM object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/gcc/boot.S.obj
+ [93/116] Building ASM object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/gcc/cpu_init.S.obj
+ [94/116] Building ASM object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/gcc/translation_table.S.obj
+ [95/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/xil_exception.c.obj
+ [96/116] Building ASM object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/gcc/asm_vectors.S.obj
+ [97/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/vectors.c.obj
+ [98/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/putnum.c.obj
+ [99/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/xil_spinlock.c.obj
+ [100/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/common/xpm_counter.c.obj
+ [101/116] Building ASM object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/gcc/xil-crt0.S.obj
+ [102/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/xil_cache.c.obj
+ [103/116] Archiving C static library libsrc/build_configs/gen_bsp/libxil.a
+ [104/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/xil_misc_psreset_api.c.obj
+ [105/116] Building C object libsrc/xiltimer/src/CMakeFiles/xiltimer.dir/core/default_timer/globaltimer_sleep_zynq.c.obj
+ [106/116] Building C object libsrc/xiltimer/src/CMakeFiles/xiltimer.dir/xiltimer.c.obj
+ [107/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/xil_mmu.c.obj
+ [108/116] Building C object libsrc/standalone/src/CMakeFiles/xilstandalone.dir/arm/cortexa9/xl2cc_counter.c.obj
+ [109/116] Building C object libsrc/xilffs/src/CMakeFiles/xilffs.dir/diskio.c.obj
+ [110/116] Building C object libsrc/xilffs/src/CMakeFiles/xilffs.dir/ffunicode.c.obj
+ [111/116] Building C object libsrc/xilffs/src/CMakeFiles/xilffs.dir/ffsystem.c.obj
+ [112/116] Linking C static library libsrc\xilrsa\src\libxilrsa.a
+ [113/116] Building C object libsrc/xilffs/src/CMakeFiles/xilffs.dir/ff.c.obj
+ [114/116] Linking C static library libsrc\xiltimer\src\libxiltimer.a
+ [115/116] Linking C static library libsrc\standalone\src\libxilstandalone.a
+ [116/116] Linking C static library libsrc\xilffs\src\libxilffs.a
+ Generating Boot ELFs
+ [INFO]: Starting Application build process
+ [INFO]: Building BSP
+ [INFO]: Copying headers and built archives
+ [INFO]: Successfully built BSP. Generated libxil.a, libxilffs.a, libxilrsa.a, libxilstandalone.a, libxiltimer.a
+ [INFO]: Building Application
+ [1/2] Archiving C static library libsrc/build_configs/gen_bsp/libxil.a
+ [2/2] ========== BSP Build Information ==========
+ Compiler PATH: C:/AMDDesignTools/2025.2/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc.exe
+ Compiler FLAGS:  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=C:/Users/Novokh
+ atkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/zynq_fsbl_bsp/Xilinx.spec -IC:/User
+ s/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/zynq_fsbl_bsp/include  -O2 
+ -g -Wall -Wextra -fno-tree-loop-distribute-patterns -DNDEBUG
+ ===========================================
+ ** The above flags are BSP level flags. Increase verbosity to see component specific flags **
+ ===========================================
+ [1/13] ==========Application Build Information ==========
+ Compiler Flags:  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=C:/Users/Novokh
+ atkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/zynq_fsbl_bsp/Xilinx.spec -IC:/User
+ s/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/zynq_fsbl_bsp/include -Wall
+  -Wextra      -O0  -g3     -U__clang__  
+ Linker Flags:       -Os -Wl,--gc-sections -n -T"C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/
+ zynq_led/platform/zynq_fsbl/lscript.ld" -L"C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_
+ led/platform/zynq_fsbl/zynq_fsbl_bsp/lib/" -L"/" -Wl,--start-group,-lxiltimer,-lxilffs,-lxilrsa,-lxi
+ l,-lxilstandalone,-lxiltimer,-lxilffs,-lxilrsa,-lgcc,-lc -Wl,--end-group
+ ===========================================
+ [2/13] Building C object CMakeFiles/fsbl.elf.dir/md5.c.obj
+ [3/13] Building C object CMakeFiles/fsbl.elf.dir/fsbl_hooks.c.obj
+ [4/13] Building C object CMakeFiles/fsbl.elf.dir/nor.c.obj
+ [5/13] Building C object CMakeFiles/fsbl.elf.dir/pcap.c.obj
+ [6/13] Building C object CMakeFiles/fsbl.elf.dir/image_mover.c.obj
+ C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/image_mover.c: In function 'LoadBootImage':
+ C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/image_mover.c:400:66: warning: comparison of unsigned expression in '< 0' is always false [-Wtype-limits]
+   400 |                 if ((PSPartitionFlag == 1) && (PartitionLoadAddr < DDR_START_ADDR)) {
+       |                                                                  ^
+ [7/13] Building C object CMakeFiles/fsbl.elf.dir/nand.c.obj
+ [8/13] Building C object CMakeFiles/fsbl.elf.dir/qspi.c.obj
+ [9/13] Building C object CMakeFiles/fsbl.elf.dir/rsa.c.obj
+ [10/13] Building C object CMakeFiles/fsbl.elf.dir/main.c.obj
+ C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/main.c: In function 'main':
+ C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/main.c:235:13: warning: unused variable 'RegVal' [-Wunused-variable]
+   235 |         u32 RegVal;
+       |             ^~~~~~
+ C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/main.c:233:13: warning: unused variable 'HandoffAddress' [-Wunused-variable]
+   233 |         u32 HandoffAddress = 0;
+       |             ^~~~~~~~~~~~~~
+ C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/main.c:232:13: warning: unused variable 'BootModeRegister' [-Wunused-variable]
+   232 |         u32 BootModeRegister = 0;
+       |             ^~~~~~~~~~~~~~~~
+ [11/13] Building C object CMakeFiles/fsbl.elf.dir/sd.c.obj
+ [12/13] Building C object CMakeFiles/fsbl.elf.dir/ps7_init.c.obj
+ C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/ps7_init.c: In function 'ps7_config':
+ C:/Users/NovokhatkoTaras/Work/FPGA/homework_4/vitis/zynq_led/platform/zynq_fsbl/ps7_init.c:1936:35: warning: comparison of integer expressions of different signedness: 'long unsigned int' and 'int' [-Wsign-compare]
+  1936 |                     while ((*addr < delay)) {
+       |                                   ^
+ [13/13] Linking C executable fsbl.elf
+    text	   data	    bss	    dec	    hex	filename
+   54689	   2172	  68004	 124865	  1e7c1	fsbl.elf
+ Generating Export directory
+ Platform Build Finished successfully.
+[10.10.2026, 14:53:42]: Generate platform platform with id '1756d00d-d072-4eef-a1c8-d09f2a6b9d8b' ended.
