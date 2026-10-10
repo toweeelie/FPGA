@@ -44,19 +44,19 @@ module tb_led_mb();
         rst = 1'b0;
         btn = 3'b000;
         sw = 1'b0;
-        
-        // Keep MicroBlaze in reset for several clock cycles.
         repeat (10) @(posedge clk);
         rst = 1'b1;
+        
+        // wait microblaze to enter polling loop 
+        #40us;
 
         // Press start/stop after the application has initialized.
-        repeat (400) @(posedge clk);
         btn = 3'b001;
-        repeat (100) @(posedge clk);
+        repeat (200) @(posedge clk);
         btn = 3'b000;
 
-        // Run long enough to observe startup AXI reads and writes.
-        #20us;
+
+        #40us;
         $finish;
     end
 endmodule
