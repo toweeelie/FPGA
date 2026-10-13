@@ -47,7 +47,7 @@ int main(void)
             // start transfer
             XAxiDma_SimpleTransfer(&dma_inst, DST_ADDR, LENGTH, XAXIDMA_DEVICE_TO_DMA);
             XGpio_DiscreteWrite(&capture_gpio, GPIO_CHANNEL, 1);
-            XGpio_DiscreteWrite(&capture_gpio, GPIO_CHANNEL, 0);
+            //XGpio_DiscreteWrite(&capture_gpio, GPIO_CHANNEL, 0);
             while (XAxiDma_Busy(&dma_inst, XAXIDMA_DEVICE_TO_DMA));
         }
 
