@@ -45,12 +45,15 @@ module mb_dma_tb();
         rst = 1'b1;
         
         // wait microblaze to enter polling loop 
-        #25us;
+        #60us;
         btn = 1'b1;
         
         for (int i = 0; i < 320*200; i = i + 1) begin
             @(negedge clk);
             data_in = i[7:0];
+            if (i == 100) begin
+                btn = 1'b0;
+            end
         end
     
         #5us;

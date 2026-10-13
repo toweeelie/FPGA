@@ -35,7 +35,7 @@
         "ARCHITECTURE": [ { "value": "zynq", "resolve_type": "generated", "usage": "all" } ],
         "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
-        "DEVICE": [ { "value": "xc7z010", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7z020", "resolve_type": "generated", "usage": "all" } ],
         "PACKAGE": [ { "value": "clg400", "resolve_type": "generated", "usage": "all" } ],
         "PREFHDL": [ { "value": "VERILOG", "resolve_type": "generated", "usage": "all" } ],
         "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
@@ -192,5 +192,5 @@
       }
     }
   },
-  "checksum": "68ba2a2f"
+  "checksum": "33d40349"
 }

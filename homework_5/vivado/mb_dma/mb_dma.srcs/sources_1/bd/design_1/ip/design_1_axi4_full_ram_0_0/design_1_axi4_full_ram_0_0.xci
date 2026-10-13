@@ -9,20 +9,20 @@
     "parameters": {
       "component_parameters": {
         "DATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "ADDR_WIDTH": [ { "value": "10", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "MEM_DEPTH": [ { "value": "64000", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "ADDR_WIDTH": [ { "value": "12", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "MEM_DEPTH": [ { "value": "4000", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "design_1_axi4_full_ram_0_0", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
         "DATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "ADDR_WIDTH": [ { "value": "10", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "MEM_DEPTH": [ { "value": "64000", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "ADDR_WIDTH": [ { "value": "12", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "MEM_DEPTH": [ { "value": "4000", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq", "resolve_type": "generated", "usage": "all" } ],
         "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
-        "DEVICE": [ { "value": "xc7z010", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7z020", "resolve_type": "generated", "usage": "all" } ],
         "PACKAGE": [ { "value": "clg400", "resolve_type": "generated", "usage": "all" } ],
         "PREFHDL": [ { "value": "VERILOG", "resolve_type": "generated", "usage": "all" } ],
         "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
@@ -46,7 +46,7 @@
       "ports": {
         "s_axi_aclk": [ { "direction": "in" } ],
         "s_axi_aresetn": [ { "direction": "in" } ],
-        "s_axi_awaddr": [ { "direction": "in", "size_left": "9", "size_right": "0", "driver_value": "0" } ],
+        "s_axi_awaddr": [ { "direction": "in", "size_left": "11", "size_right": "0", "driver_value": "0" } ],
         "s_axi_awlen": [ { "direction": "in", "size_left": "7", "size_right": "0", "driver_value": "0" } ],
         "s_axi_awsize": [ { "direction": "in", "size_left": "2", "size_right": "0" } ],
         "s_axi_awburst": [ { "direction": "in", "size_left": "1", "size_right": "0", "driver_value": "1" } ],
@@ -60,7 +60,7 @@
         "s_axi_bresp": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
         "s_axi_bvalid": [ { "direction": "out" } ],
         "s_axi_bready": [ { "direction": "in", "driver_value": "0" } ],
-        "s_axi_araddr": [ { "direction": "in", "size_left": "9", "size_right": "0", "driver_value": "0" } ],
+        "s_axi_araddr": [ { "direction": "in", "size_left": "11", "size_right": "0", "driver_value": "0" } ],
         "s_axi_arlen": [ { "direction": "in", "size_left": "7", "size_right": "0", "driver_value": "0" } ],
         "s_axi_arsize": [ { "direction": "in", "size_left": "2", "size_right": "0" } ],
         "s_axi_arburst": [ { "direction": "in", "size_left": "1", "size_right": "0", "driver_value": "1" } ],
@@ -83,7 +83,7 @@
             "PROTOCOL": [ { "value": "AXI4", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "FREQ_HZ": [ { "value": "100000000", "value_src": "ip_propagated", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "ID_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "ADDR_WIDTH": [ { "value": "10", "value_src": "auto", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "ADDR_WIDTH": [ { "value": "12", "value_src": "auto", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "AWUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "ARUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "WUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
@@ -185,5 +185,5 @@
       }
     }
   },
-  "checksum": "1559a990"
+  "checksum": "7a815e74"
 }

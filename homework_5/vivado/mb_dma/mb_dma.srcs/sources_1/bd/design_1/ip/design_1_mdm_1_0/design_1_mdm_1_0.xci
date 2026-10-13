@@ -47,7 +47,7 @@
       },
       "model_parameters": {
         "C_FAMILY": [ { "value": "zynq", "resolve_type": "generated", "usage": "all" } ],
-        "C_DEVICE": [ { "value": "xc7z010", "resolve_type": "generated", "usage": "all" } ],
+        "C_DEVICE": [ { "value": "xc7z020", "resolve_type": "generated", "usage": "all" } ],
         "C_JTAG_CHAIN": [ { "value": "2", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_USE_BSCAN": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_BSCANID": [ { "value": "76547328", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -84,7 +84,7 @@
         "ARCHITECTURE": [ { "value": "zynq", "resolve_type": "generated", "usage": "all" } ],
         "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
-        "DEVICE": [ { "value": "xc7z010", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7z020", "resolve_type": "generated", "usage": "all" } ],
         "PACKAGE": [ { "value": "clg400", "resolve_type": "generated", "usage": "all" } ],
         "PREFHDL": [ { "value": "VERILOG", "resolve_type": "generated", "usage": "all" } ],
         "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
@@ -164,5 +164,5 @@
       }
     }
   },
-  "checksum": "46e17ca3"
+  "checksum": "6351e777"
 }

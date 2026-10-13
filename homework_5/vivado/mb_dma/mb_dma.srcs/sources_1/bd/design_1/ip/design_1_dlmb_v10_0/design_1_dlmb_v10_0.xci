@@ -28,7 +28,7 @@
         "ARCHITECTURE": [ { "value": "zynq", "resolve_type": "generated", "usage": "all" } ],
         "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
-        "DEVICE": [ { "value": "xc7z010", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7z020", "resolve_type": "generated", "usage": "all" } ],
         "PACKAGE": [ { "value": "clg400", "resolve_type": "generated", "usage": "all" } ],
         "PREFHDL": [ { "value": "VERILOG", "resolve_type": "generated", "usage": "all" } ],
         "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
@@ -86,7 +86,7 @@
             "DATA_WIDTH": [ { "value": "32", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_WRITE_MODE": [ { "value": "READ_WRITE", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "PROTOCOL": [ { "value": "STANDARD", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "HAS_PROT": [ { "value": "0", "value_src": "propagated", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
+            "HAS_PROT": [ { "value": "0", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "ABUS": [ { "physical_name": "LMB_ABus" } ],
@@ -163,5 +163,5 @@
       }
     }
   },
-  "checksum": "039642ce"
+  "checksum": "b0139661"
 }

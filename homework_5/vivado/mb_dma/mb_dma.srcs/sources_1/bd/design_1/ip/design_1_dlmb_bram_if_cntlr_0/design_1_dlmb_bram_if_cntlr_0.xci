@@ -9,8 +9,8 @@
     "parameters": {
       "component_parameters": {
         "C_BASEADDR": [ { "value": "0x0000000000000000", "value_src": "propagated", "value_permission": "bd", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
-        "C_HIGHADDR": [ { "value": "0x0000000000003FFF", "value_src": "propagated", "value_permission": "bd", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
-        "C_MASK": [ { "value": "0x0000000040014000", "value_src": "propagated", "value_permission": "bd_and_user", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "C_HIGHADDR": [ { "value": "0x0000000000007FFF", "value_src": "propagated", "value_permission": "bd", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "C_MASK": [ { "value": "0x0000000040010000", "value_src": "propagated", "value_permission": "bd_and_user", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "C_MASK1": [ { "value": "0x0000000000800000", "value_permission": "bd_and_user", "resolve_type": "user", "format": "bitString", "enabled": false, "usage": "all" } ],
         "C_MASK2": [ { "value": "0x0000000000800000", "value_permission": "bd_and_user", "resolve_type": "user", "format": "bitString", "enabled": false, "usage": "all" } ],
         "C_MASK3": [ { "value": "0x0000000000800000", "value_permission": "bd_and_user", "resolve_type": "user", "format": "bitString", "enabled": false, "usage": "all" } ],
@@ -50,10 +50,10 @@
       },
       "model_parameters": {
         "C_FAMILY": [ { "value": "zynq", "resolve_type": "generated", "usage": "all" } ],
-        "C_HIGHADDR": [ { "value": "0x0000000000003FFF", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "C_HIGHADDR": [ { "value": "0x0000000000007FFF", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
         "C_BASEADDR": [ { "value": "0x0000000000000000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
         "C_NUM_LMB": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_MASK": [ { "value": "0x0000000040014000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "C_MASK": [ { "value": "0x0000000040010000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
         "C_MASK1": [ { "value": "0x0000000000800000", "resolve_type": "generated", "format": "bitString", "enabled": false, "usage": "all" } ],
         "C_MASK2": [ { "value": "0x0000000000800000", "resolve_type": "generated", "format": "bitString", "enabled": false, "usage": "all" } ],
         "C_MASK3": [ { "value": "0x0000000000800000", "resolve_type": "generated", "format": "bitString", "enabled": false, "usage": "all" } ],
@@ -92,7 +92,7 @@
         "ARCHITECTURE": [ { "value": "zynq", "resolve_type": "generated", "usage": "all" } ],
         "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
-        "DEVICE": [ { "value": "xc7z010", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7z020", "resolve_type": "generated", "usage": "all" } ],
         "PACKAGE": [ { "value": "clg400", "resolve_type": "generated", "usage": "all" } ],
         "PREFHDL": [ { "value": "VERILOG", "resolve_type": "generated", "usage": "all" } ],
         "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
@@ -167,13 +167,13 @@
           "abstraction_type": "xilinx.com:interface:bram_rtl:1.0",
           "mode": "master",
           "parameters": {
-            "MEM_SIZE": [ { "value": "16384", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "usage": "all" } ],
+            "MEM_SIZE": [ { "value": "32768", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "usage": "all" } ],
             "MASTER_TYPE": [ { "value": "BRAM_CTRL", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
             "MEM_WIDTH": [ { "value": "32", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "MEM_ECC": [ { "value": "NONE", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_WRITE_MODE": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_LATENCY": [ { "value": "1", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "MEM_ADDRESS_MODE": [ { "value": "", "value_src": "weak", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ]
+            "MEM_ADDRESS_MODE": [ { "value": "", "value_src": "weak", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "ADDR": [ { "physical_name": "BRAM_Addr_A" } ],
@@ -378,5 +378,5 @@
       }
     }
   },
-  "checksum": "609a2222"
+  "checksum": "0c3d7e7d"
 }

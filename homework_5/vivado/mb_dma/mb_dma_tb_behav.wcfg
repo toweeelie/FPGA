@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="mb_dma_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_datamover_pkg" />
+            <top_module name="axi_dma_pkg" />
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="lmb_bram_if_funcs" />
+            <top_module name="mb_dma_tb" />
+            <top_module name="mdm_funcs" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="101.000001 us"></ZoomEndTime>
+      <Cursor1Time time="101.000000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="198"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/mb_dma_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_dma_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_dma_tb/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_dma_tb/btn" type="logic">
+      <obj_property name="ElementShortName">btn</obj_property>
+      <obj_property name="ObjectShortName">btn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_byte_capture_0/m_axis" type="protoinst">
+      <obj_property name="ElementShortName">m_axis</obj_property>
+      <obj_property name="ObjectShortName">m_axis</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_byte_capture_0/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_full_ram_0/s_axi" type="protoinst">
+      <obj_property name="ElementShortName">s_axi</obj_property>
+      <obj_property name="ObjectShortName">s_axi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/microblaze_0/M_AXI_DP" type="protoinst">
+      <obj_property name="ElementShortName">M_AXI_DP</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_DP</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider123">
+      <obj_property name="label">DMA</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi_dma_0/M_AXI_S2MM" type="protoinst">
+      <obj_property name="ElementShortName">M_AXI_S2MM</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_S2MM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi_dma_0/S_AXIS_S2MM" type="protoinst">
+      <obj_property name="ElementShortName">S_AXIS_S2MM</obj_property>
+      <obj_property name="ObjectShortName">S_AXIS_S2MM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi_dma_0/S_AXI_LITE" type="protoinst">
+      <obj_property name="ElementShortName">S_AXI_LITE</obj_property>
+      <obj_property name="ObjectShortName">S_AXI_LITE</obj_property>
+   </wvobject>
+</wave_config>
