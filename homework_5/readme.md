@@ -18,8 +18,8 @@ Picture above shows the following subsequent events:
 - Start DMA transfer on `dma axi` right after `btn` strobe
 - `start` strobe in parallel to `start axi` activity
 - Data reads on `capture axi` right after `start` strobe
-- Data writes on `full_ram axi` some time after `capture axi` activity
-- `DMA buzy` polling on `dma axi` all period between `start` strobe and the end of `full_ram axi` activity
+- Data writes on `full_ram axi` some time after `capture axi` activity start
+- `DMA buzy` polling on `dma axi` all the time between `start` strobe and the end of `full_ram axi` activity
 - Polling the button on `btn axi` after transfer complete
 
 ## Description
