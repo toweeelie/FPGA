@@ -8,7 +8,7 @@
 #define RAM_BASE XPAR_AXI4_FULL_RAM_0_BASEADDR
 #define CAPTURE_BASEADDR XPAR_AXI_GPIO_1_BASEADDR 
 
-#define WORDS         (4000)
+#define WORDS         (1000)
 #define LENGTH        (WORDS * 4)
 
 #define GPIO_CHANNEL 1U

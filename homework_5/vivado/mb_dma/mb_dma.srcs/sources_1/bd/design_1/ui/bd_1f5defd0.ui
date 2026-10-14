@@ -30,6 +30,7 @@ preplace netloc reset_rtl_0_1 1 0 1 NJ -370
 preplace netloc rst_clk_wiz_1_100M_bus_struct_reset 1 1 2 130 -120 660
 preplace netloc rst_clk_wiz_1_100M_mb_reset 1 1 1 120 -510n
 preplace netloc rst_clk_wiz_1_100M_peripheral_aresetn 1 0 3 -270 -240 120 -90 710
+preplace netloc axi4_byte_capture_0_m_axis 1 1 1 150 -260n
 preplace netloc axi_dma_0_M_AXI_S2MM 1 2 1 N -260
 preplace netloc axi_gpio_0_GPIO 1 0 2 N -600 100J
 preplace netloc axi_smc_M00_AXI 1 2 2 720 -340 990
@@ -40,7 +41,6 @@ preplace netloc microblaze_0_M_AXI_DP 1 2 1 670 -520n
 preplace netloc microblaze_0_debug 1 1 2 170 -140 630
 preplace netloc microblaze_0_dlmb_1 1 2 1 N -560
 preplace netloc microblaze_0_ilmb_1 1 2 1 N -540
-preplace netloc axi4_byte_capture_0_m_axis 1 1 1 150 -260n
 levelinfo -pg 1 -310 -70 400 850 1020
 pagesize -pg 1 -db -bbox -sgen -460 -1230 1790 1360
 "

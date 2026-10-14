@@ -43,7 +43,7 @@ endmodule
 
 module axi4_byte_capture #(
     parameter integer FIFO_WORDS = 128,
-    parameter integer FRAME_WORDS = 4000
+    parameter integer FRAME_WORDS = 64000
 )(
     input  logic        clk,
     input  logic        rst_n,

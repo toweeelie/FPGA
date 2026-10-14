@@ -12,6 +12,15 @@
 ## Results
 
 ![sim](mb_dma_sim.png)
+Picture above shows the following subsequent events:
+- DMA init on `dma axi`
+- Polling the button on `btn axi`
+- Start DMA transfer on `dma axi` right after `btn` strobe
+- `start` strobe in parallel to `start axi` activity
+- Data reads on `capture axi` right after `start` strobe
+- Data writes on `full_ram axi` some time after `capture axi` activity
+- `DMA buzy` polling on `dma axi` all period between `start` strobe and the end of `full_ram axi` activity
+- Polling the button on `btn axi` after transfer complete
 
 ## Description
 
@@ -35,11 +44,15 @@ System consists of the following key components:
     - [main.c](vitis/main.c) - main source file for Vitis project
 - [vivado](vivado) - Vivado projects
     - [axi4_byte_capture](vivado/axi4_byte_capture) - `axi_byte_capture` module IP
+        - [axi4_byte_capture.sv](vivado/axi4_byte_capture/axi4_byte_capture.sv) - source code for capture module
     - [Axi4_full_ram](vivado/Axi4_full_ram) - `axi_full_ram` module IP
     - [mb_dma](vivado/mb_dma) - main Vivado project
+        - [mb_dma_tb.sv](vivado/mb_dma/mb_dma.srcs/sim_1/new/mb_dma_tb.sv) - testbench source
 
 ## Issues
 
 I didn't manage to implement 320x200 size of the transfer, `axi_full_ram` module synthesis fails with such amount of memory:
     ![synth_fail](synth_fail.png)
-    
+I tried executing proposed command from error message, but right after it synthesis became running extremely long.
+Looks like `axi4_full_ram` module needs to be fixed somehow to support memory sizes larger 4k bytes.
+I also tried to choose larger target platform (like Zynq 7030), but this didn't solve this issue.

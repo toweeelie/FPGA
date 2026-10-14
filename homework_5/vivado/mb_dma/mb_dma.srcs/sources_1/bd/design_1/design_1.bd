@@ -519,7 +519,7 @@
             "value": "12"
           },
           "MEM_DEPTH": {
-            "value": "4000"
+            "value": "1000"
           }
         },
         "interface_ports": {
@@ -542,7 +542,7 @@
             "value": "128"
           },
           "FRAME_WORDS": {
-            "value": "4000"
+            "value": "1000"
           }
         }
       },
@@ -1010,8 +1010,7 @@
               "SEG_axi4_full_ram_0_reg0": {
                 "address_block": "/axi4_full_ram_0/s_axi/reg0",
                 "offset": "0x00010000",
-                "range": "4K",
-                "is_excluded": "TRUE"
+                "range": "4K"
               },
               "SEG_axi_dma_0_Reg": {
                 "address_block": "/axi_dma_0/S_AXI_LITE/Reg",
@@ -1040,7 +1039,7 @@
       "file": {
         "name": "..\\..\\..\\..\\..\\..\\vitis\\app_component\\build\\app_component.elf",
         "type": "ELF",
-        "checksum": "1951504539",
+        "checksum": "1711717554",
         "IsVisible": "1",
         "ScopedToRef": "design_1",
         "ScopedToCell": [

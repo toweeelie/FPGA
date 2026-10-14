@@ -17,15 +17,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="63,187.201 ns"></ZoomStartTime>
-      <ZoomEndTime time="63,431.202 ns"></ZoomEndTime>
-      <Cursor1Time time="63,227.867 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="123.195001 us"></ZoomEndTime>
+      <Cursor1Time time="123.195000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="198"></NameColumnWidth>
-      <ValueColumnWidth column_width="110"></ValueColumnWidth>
+      <ValueColumnWidth column_width="105"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="10" />
    <wvobject fp_name="/mb_dma_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -46,29 +46,23 @@
       <obj_property name="ElementShortName">start</obj_property>
       <obj_property name="ObjectShortName">start</obj_property>
    </wvobject>
-   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi_dma_0/M_AXI_S2MM" type="protoinst">
-      <obj_property name="ElementShortName">M_AXI_S2MM</obj_property>
-      <obj_property name="ObjectShortName">M_AXI_S2MM</obj_property>
+   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_full_ram_0/s_axi" type="protoinst">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">s_axi</obj_property>
+      <obj_property name="ObjectShortName">s_axi</obj_property>
       <obj_property name="children_use_element_short_name">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
       <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
       <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="CustomSignalColor">turquoise</obj_property>
-      <obj_property name="Render_Data">/mb_dma_tb/dut/design_1_i/axi_dma_0/M_AXI_S2MM.readWriteSummary</obj_property>
+      <obj_property name="Render_Data">/mb_dma_tb/dut/design_1_i/axi4_full_ram_0/s_axi.readWriteSummary</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="CellHeight">36</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_full_ram_0/s_axi" type="protoinst">
-      <obj_property name="ElementShortName">s_axi</obj_property>
-      <obj_property name="ObjectShortName">s_axi</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi_dma_0/S_AXIS_S2MM" type="protoinst">
-      <obj_property name="ElementShortName">S_AXIS_S2MM</obj_property>
-      <obj_property name="ObjectShortName">S_AXIS_S2MM</obj_property>
+      <obj_property name="label">full_ram axi</obj_property>
    </wvobject>
    <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_byte_capture_0/m_axis" type="protoinst">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="children_use_element_short_name">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
       <obj_property name="EnumTransactionColorTable">fff,fff=blank</obj_property>
@@ -83,42 +77,51 @@
       <obj_property name="Detail_Data">/mb_dma_tb/dut/design_1_i/axi4_byte_capture_0/m_axis.streamTooltipData</obj_property>
       <obj_property name="ElementShortName">m_axis</obj_property>
       <obj_property name="ObjectShortName">m_axis</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+      <obj_property name="label">capture axi</obj_property>
    </wvobject>
-   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/microblaze_0/M_AXI_DP" type="protoinst">
-      <obj_property name="ElementShortName">M_AXI_DP</obj_property>
-      <obj_property name="ObjectShortName">M_AXI_DP</obj_property>
+   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi_gpio_0/S_AXI" type="protoinst">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/mb_dma_tb/dut/design_1_i/axi_gpio_0/S_AXI.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">S_AXI</obj_property>
+      <obj_property name="ObjectShortName">S_AXI</obj_property>
+      <obj_property name="label">btn axi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi_gpio_1/S_AXI" type="protoinst">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/mb_dma_tb/dut/design_1_i/axi_gpio_1/S_AXI.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">S_AXI</obj_property>
+      <obj_property name="ObjectShortName">S_AXI</obj_property>
+      <obj_property name="label">start axi</obj_property>
    </wvobject>
    <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi_dma_0/S_AXI_LITE" type="protoinst">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">S_AXI_LITE</obj_property>
       <obj_property name="ObjectShortName">S_AXI_LITE</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_byte_capture_0/inst/data_in" type="array">
-      <obj_property name="ElementShortName">data_in[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_byte_capture_0/inst/fifo_wr" type="logic">
-      <obj_property name="ElementShortName">fifo_wr</obj_property>
-      <obj_property name="ObjectShortName">fifo_wr</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_byte_capture_0/inst/start" type="logic">
-      <obj_property name="ElementShortName">start</obj_property>
-      <obj_property name="ObjectShortName">start</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_byte_capture_0/inst/pack_reg" type="array">
-      <obj_property name="ElementShortName">pack_reg[31:0]</obj_property>
-      <obj_property name="ObjectShortName">pack_reg[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_byte_capture_0/inst/byte_count" type="array">
-      <obj_property name="ElementShortName">byte_count[1:0]</obj_property>
-      <obj_property name="ObjectShortName">byte_count[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_byte_capture_0/inst/fifo_rd" type="logic">
-      <obj_property name="ElementShortName">fifo_rd</obj_property>
-      <obj_property name="ObjectShortName">fifo_rd</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mb_dma_tb/dut/design_1_i/axi4_byte_capture_0/inst/m_axis_tdata" type="array">
-      <obj_property name="ElementShortName">m_axis_tdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tdata[31:0]</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/mb_dma_tb/dut/design_1_i/axi_dma_0/S_AXI_LITE.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="label">dma axi</obj_property>
    </wvobject>
 </wave_config>

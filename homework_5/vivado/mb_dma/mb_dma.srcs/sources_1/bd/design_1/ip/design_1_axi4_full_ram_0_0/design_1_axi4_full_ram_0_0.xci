@@ -10,13 +10,13 @@
       "component_parameters": {
         "DATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "ADDR_WIDTH": [ { "value": "12", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "MEM_DEPTH": [ { "value": "4000", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "MEM_DEPTH": [ { "value": "1000", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "design_1_axi4_full_ram_0_0", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
         "DATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "ADDR_WIDTH": [ { "value": "12", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "MEM_DEPTH": [ { "value": "4000", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "MEM_DEPTH": [ { "value": "1000", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq", "resolve_type": "generated", "usage": "all" } ],
@@ -185,5 +185,5 @@
       }
     }
   },
-  "checksum": "b3f34587"
+  "checksum": "4f732b8c"
 }
