@@ -538,8 +538,11 @@
         "inst_hier_path": "axi4_byte_capture_0",
         "has_run_ip_tcl": "true",
         "parameters": {
+          "FIFO_WORDS": {
+            "value": "128"
+          },
           "FRAME_WORDS": {
-            "value": "4"
+            "value": "4000"
           }
         }
       },
@@ -1037,7 +1040,7 @@
       "file": {
         "name": "..\\..\\..\\..\\..\\..\\vitis\\app_component\\build\\app_component.elf",
         "type": "ELF",
-        "checksum": "0",
+        "checksum": "1951504539",
         "IsVisible": "1",
         "ScopedToRef": "design_1",
         "ScopedToCell": [
