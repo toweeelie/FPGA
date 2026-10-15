@@ -532,7 +532,7 @@
       },
       "axi4_byte_capture_0": {
         "vlnv": "xilinx.com:user:axi4_byte_capture:1.0",
-        "ip_revision": "1",
+        "ip_revision": "2",
         "xci_name": "design_1_axi4_byte_capture_0_0",
         "xci_path": "ip\\design_1_axi4_byte_capture_0_0\\design_1_axi4_byte_capture_0_0.xci",
         "inst_hier_path": "axi4_byte_capture_0",
@@ -1039,7 +1039,7 @@
       "file": {
         "name": "..\\..\\..\\..\\..\\..\\vitis\\app_component\\build\\app_component.elf",
         "type": "ELF",
-        "checksum": "1711717554",
+        "checksum": "2167687485",
         "IsVisible": "1",
         "ScopedToRef": "design_1",
         "ScopedToCell": [
