@@ -125,4 +125,13 @@ module axi4_byte_capture #(
         .empty (fifo_empty)
     );
 
+    ila_0 #() ila_0_inst (
+        .clk(clk),
+        .probe0(m_axis_tdata),
+        .probe1(start),
+        .probe2(m_axis_tready),
+        .probe3(m_axis_tvalid),
+        .probe4(m_axis_tlast)
+    );
+
 endmodule
