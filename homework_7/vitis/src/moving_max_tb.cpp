@@ -5,8 +5,8 @@
 static void reference(const int x[N_SAMPLES], int y[N_SAMPLES]) {
     for (int n = 0; n < N_SAMPLES; n++) {
 		int win_max = INT_MIN;
-        for (int k = n; k > n-WINDOW; ; k--) {
-			if k < 0
+        for (int k = n; k > n-WINDOW; k--) {
+			if (k < 0)
 				continue;
 			if (win_max < x[k])
 				win_max = x[k];

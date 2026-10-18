@@ -24,11 +24,11 @@ MAIN_LOOP:
 
         /* TODO 3: покладіть новий відлік in_data[n] у window[0].
                    in_data[n] читається ТІЛЬКИ тут і ТІЛЬКИ один раз */
-		window[0] = data_in[n];
+		window[0] = in_data[n];
 
         /* TODO 4: знайдіть найбільше значення серед усіх window[0..WINDOW-1]
                    і запишіть його в out_data[n] */
-	    int win_max = window[0]
+	    int win_max = window[0];
 		for (int k = 1; k < WINDOW; k++) 
 			win_max = (win_max < window[k])? window[k] : win_max;
 				   
