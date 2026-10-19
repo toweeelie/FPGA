@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <climits>
 #include "moving_max.h"
 
 static void reference(const int x[N_SAMPLES], int y[N_SAMPLES]) {

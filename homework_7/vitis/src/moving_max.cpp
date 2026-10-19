@@ -16,9 +16,11 @@ INIT_LOOP:
 
 MAIN_LOOP:
     for (int n = 0; n < N_SAMPLES; n++) {
+#pragma HLS PIPELINE II=1
         /* TODO 2: зсуньте вміст window на одну позицію:
                    window[k] отримує значення window[k-1],
                    для k від WINDOW-1 до 1 (по спаданню) */
+    WINDOW_LOOP:
 		for (int k = WINDOW-1; k > 0; k--) 
 			window[k] = window[k-1];
 
@@ -29,6 +31,7 @@ MAIN_LOOP:
         /* TODO 4: знайдіть найбільше значення серед усіх window[0..WINDOW-1]
                    і запишіть його в out_data[n] */
 	    int win_max = window[0];
+    MAX_LOOP:
 		for (int k = 1; k < WINDOW; k++) 
 			win_max = (win_max < window[k])? window[k] : win_max;
 				   
