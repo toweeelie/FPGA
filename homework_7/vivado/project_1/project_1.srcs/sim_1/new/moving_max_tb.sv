@@ -24,6 +24,7 @@ module moving_max_tb();
 
     localparam N_SAMPLES = 64;
     localparam WINDOW    = 8;
+    localparam ADDR_WD   = $clog2(N_SAMPLES);
     // RAM latency
     localparam RD_LAT    = 1;
 
@@ -32,10 +33,10 @@ module moving_max_tb();
     reg ap_start = 1'b0;
     wire ap_done, ap_idle, ap_ready;
 
-    wire [4:0]  in_data_address0;
+    wire [ADDR_WD-1:0]  in_data_address0;
     wire        in_data_ce0;
     wire [31:0] in_data_q0;
-    wire [4:0]  out_data_address0;
+    wire [ADDR_WD-1:0]  out_data_address0;
     wire        out_data_ce0;
     wire        out_data_we0;
     wire [31:0] out_data_d0;
