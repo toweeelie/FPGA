@@ -13,7 +13,9 @@ import digital_echo_p::*;
 
 module digital_echo #(
     parameter int AXI_DATA_WIDTH = 32,
-    parameter int AXI_ADDR_WIDTH = 5
+    parameter int AXI_ADDR_WIDTH = 5,
+    parameter int MAX_D_VALUE = 8,
+    parameter int MAX_SHIFT_VALUE = 3
 )(
     // clk and rst
     input  logic                          s_axi_aclk,
@@ -62,7 +64,7 @@ module digital_echo #(
     // inner memory
     logic [AXI_DATA_WIDTH-1:0] d;
     logic [AXI_DATA_WIDTH-1:0] shift;
-    logic signed [AXI_DATA_WIDTH-1:0] delay_line [8:0];   
+    logic signed [AXI_DATA_WIDTH-1:0] delay_line [MAX_D_VALUE:0];   
     logic signed [AXI_DATA_WIDTH-1:0] interm_res;
 
     // ----------------------------------------------------
@@ -111,7 +113,7 @@ module digital_echo #(
                     AXI_REG_IDX_IN: begin
                         if (s_axi_wstrb[1:0] === '1) begin
                             interm_res = $signed(s_axi_wdata[15:0]) + (delay_line[d-1] >>> shift);
-                            for(int i = 8; i > 0; i--)
+                            for(int i = MAX_D_VALUE; i > 0; i--)
                                 delay_line[i] <= delay_line[i-1];                            
                             if (interm_res > 32'sd32767)
                                 delay_line[0] <= 32'sd32767;
@@ -122,12 +124,12 @@ module digital_echo #(
                         end
                     end
                     AXI_REG_IDX_D: begin
-                        if (s_axi_wstrb[0] && s_axi_wdata[7:0] > 0 && s_axi_wdata[7:0] < 9) begin
+                        if (s_axi_wstrb[0] && (s_axi_wdata[7:0] > 0) && (s_axi_wdata[7:0] < MAX_D_VALUE+1)) begin
                             d[7:0] <= s_axi_wdata[7:0];
                         end 
                     end
                     AXI_REG_IDX_SHIFT: begin
-                        if (s_axi_wstrb[0] && s_axi_wdata[7:0] > 0 && s_axi_wdata[7:0] < 4) begin
+                        if (s_axi_wstrb[0] && (s_axi_wdata[7:0] > 0) && (s_axi_wdata[7:0] < MAX_SHIFT_VALUE+1)) begin
                             shift[7:0] <= s_axi_wdata[7:0];
                         end 
                     end
