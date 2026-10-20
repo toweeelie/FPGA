@@ -20,7 +20,28 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mb_digital_echo_tb(
+module mb_digital_echo_tb();
 
+    logic clk;
+    logic rst;
+    
+    
+    design_1_wrapper dut(
+        .reset_rtl_0(rst),
+        .clk_100MHz(clk)
     );
+    
+    initial clk = 1'b0;
+    always #5 clk = ~clk;
+    
+    initial begin
+        // reset
+        rst = 1'b0;
+        repeat (10) @(posedge clk);
+        rst = 1'b1;
+        
+        #500us;
+    
+        $finish;
+    end
 endmodule

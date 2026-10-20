@@ -4,7 +4,7 @@
     "xci_name": "design_1_digital_echo_0_0",
     "cell_name": "digital_echo_0",
     "component_reference": "xilinx.com:user:digital_echo:1.0",
-    "ip_revision": "2",
+    "ip_revision": "3",
     "gen_directory": "../../../../../../project_1.gen/sources_1/bd/design_1/ip/design_1_digital_echo_0_0",
     "parameters": {
       "component_parameters": {
@@ -31,7 +31,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2" } ],
+        "IPREVISION": [ { "value": "3" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../project_1.gen/sources_1/bd/design_1/ip/design_1_digital_echo_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -160,12 +160,34 @@
               "base_address": "0x0",
               "range": "4096",
               "display_name": "reg0",
-              "usage": "register"
+              "usage": "register",
+              "registers": {
+                "IN": {
+                  "address_offset": "0",
+                  "size": 4
+                },
+                "OUT": {
+                  "address_offset": "4",
+                  "size": 4
+                },
+                "D": {
+                  "address_offset": "8",
+                  "size": 4
+                },
+                "SHIFT": {
+                  "address_offset": "12",
+                  "size": 4
+                },
+                "CTRL": {
+                  "address_offset": "16",
+                  "size": 4
+                }
+              }
             }
           }
         }
       }
     }
   },
-  "checksum": "28fe335b"
+  "checksum": "f647eedb"
 }

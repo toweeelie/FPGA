@@ -444,7 +444,7 @@
       },
       "digital_echo_0": {
         "vlnv": "xilinx.com:user:digital_echo:1.0",
-        "ip_revision": "2",
+        "ip_revision": "3",
         "xci_name": "design_1_digital_echo_0_0",
         "xci_path": "ip\\design_1_digital_echo_0_0\\design_1_digital_echo_0_0.xci",
         "inst_hier_path": "digital_echo_0",
@@ -613,8 +613,8 @@
       "rst_clk_wiz_1_100M_peripheral_aresetn": {
         "ports": [
           "rst_clk_wiz_1_100M/peripheral_aresetn",
-          "digital_echo_0/S_AXI_ARESETN",
-          "axi_smc/aresetn"
+          "axi_smc/aresetn",
+          "digital_echo_0/S_AXI_ARESETN"
         ]
       }
     },
