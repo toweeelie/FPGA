@@ -171,12 +171,48 @@ module digital_echo_tb();
 
     endtask
 
+
+    // -----------------------------------------
+    // Test environment
+    // -----------------------------------------
+    logic signed [DATA_WIDTH-1:0] write_values [23:0];
+    logic signed [DATA_WIDTH-1:0] read_values [23:0];
+    logic signed [DATA_WIDTH-1:0] expected_values [23:0];
+    logic result = 1'b1;
+
+
+    // -----------------------------------------
+    // Single test
+    // -----------------------------------------
+    task automatic single_test(
+        input int d,
+        input int shift,
+        input int len
+    );
+        
+        axi_write(4*AXI_REG_IDX_D, d);
+        axi_write(4*AXI_REG_IDX_SHIFT, shift);
+        axi_write(4*AXI_REG_IDX_CTRL, 1);
+        
+        for(int i = 0; i < len; i++) begin
+            axi_write(4*AXI_REG_IDX_IN, write_values[i]);
+            axi_read (4*AXI_REG_IDX_OUT, read_values[i]);
+            
+            expected_values[i] = (i < d)? write_values[i] : write_values[i] + expected_values[i-d] >>> shift;
+            if (expected_values[i] > 32'sd32767) begin expected_values[i] = 32'h00007fff; end
+            if (expected_values[i] < -32'sd32768) begin expected_values[i] = 32'hFFFF8000; end
+            
+            if (read_values[i] !== expected_values[i]) begin
+                $display("mismatch: idx %02d tst %08h, ref %08h", i, read_values[i], expected_values[i]);
+                result = 1'b0;   
+            end 
+        end
+        
+    endtask
+
     // -----------------------------------------
     // Test sequence
     // -----------------------------------------
-    logic [DATA_WIDTH-1:0] read_value;
-    logic [DATA_WIDTH-1:0] expected_value;
-    logic result = 1'b1;
 
     initial begin
         $display("Starting Digital Echo module test");
@@ -187,21 +223,23 @@ module digital_echo_tb();
 
         repeat (2) @(negedge aclk);
 
-        // Write and read back a register.
-        for(int i = 0; i < AXI_REG_IDX_SIZEOF; i++) begin
-            axi_reg_idx_e idx = axi_reg_idx_e'(i);
-            
-            expected_value = 32*i;
-            
-            axi_write(4*i, expected_value);
-            axi_read (4*i, read_value);
-    
-            if (read_value !== expected_value) begin
-                $display("%s mismatch: tst %h, ref %h",
-                       idx, read_value, expected_value);
-                result = 1'b0;   
-            end       
-        end
+        // case 1: D=4, SHIFT=1, in[0]=1000, in[1:23]={0}
+        $display("Running test1");
+        foreach(write_values[i])
+            write_values[i] = 0;
+        write_values[0] = 1000;
+        single_test(4,1,24);
+        
+        // case 2: D=4, SHIFT=1, in[0]=-1000, in[1:23]={0}
+        $display("Running test2");
+        write_values[0] = -1000;
+        single_test(4,1,24);
+
+        // case 3: D=2, SHIFT=1, in={30000, 0, 30000, 0, 0, 0}
+        $display("Running test3");
+        write_values[0] = 30000;
+        write_values[2] = 30000;
+        single_test(2,1,6);
 
         $display("Digital Echo module test completed: %s", (result)? "PASS": "FAIL");
         $finish;
