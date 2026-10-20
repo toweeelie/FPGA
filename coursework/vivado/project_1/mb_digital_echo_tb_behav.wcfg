@@ -5,6 +5,7 @@
    <db_ref_list>
       <db_ref path="mb_digital_echo_tb_behav.wdb" id="1">
          <top_modules>
+            <top_module name="digital_echo_p" />
             <top_module name="glbl" />
             <top_module name="ipif_pkg" />
             <top_module name="lmb_bram_if_funcs" />
@@ -16,12 +17,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="510.095001 us"></ZoomEndTime>
-      <Cursor1Time time="510.095000 us"></Cursor1Time>
+      <ZoomEndTime time="500.095001 us"></ZoomEndTime>
+      <Cursor1Time time="62.944747 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="198"></NameColumnWidth>
-      <ValueColumnWidth column_width="100"></ValueColumnWidth>
+      <ValueColumnWidth column_width="95"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="3" />
    <wvobject fp_name="/mb_digital_echo_tb/clk" type="logic">
@@ -32,18 +33,18 @@
       <obj_property name="ElementShortName">rst</obj_property>
       <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
-   <wvobject fp_name="/mb_digital_echo_tb/dut/design_1_i/digital_echo_0/S_AXI" type="protoinst">
+   <wvobject fp_name="/mb_digital_echo_tb/dut/design_1_i/digital_echo_0/s_axi" type="protoinst">
       <obj_property name="children_use_element_short_name">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
       <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
       <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="CustomSignalColor">turquoise</obj_property>
-      <obj_property name="Render_Data">/mb_digital_echo_tb/dut/design_1_i/digital_echo_0/S_AXI.readWriteSummary</obj_property>
+      <obj_property name="Render_Data">/mb_digital_echo_tb/dut/design_1_i/digital_echo_0/s_axi.readWriteSummary</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="CellHeight">36</obj_property>
-      <obj_property name="ElementShortName">S_AXI</obj_property>
-      <obj_property name="ObjectShortName">S_AXI</obj_property>
+      <obj_property name="ElementShortName">s_axi</obj_property>
+      <obj_property name="ObjectShortName">s_axi</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

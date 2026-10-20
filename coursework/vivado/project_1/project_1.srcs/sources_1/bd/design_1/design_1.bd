@@ -450,10 +450,10 @@
         "inst_hier_path": "digital_echo_0",
         "has_run_ip_tcl": "true",
         "interface_ports": {
-          "S_AXI": {
+          "s_axi": {
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "mode": "Slave",
-            "memory_map_ref": "S_AXI"
+            "memory_map_ref": "s_axi"
           }
         }
       },
@@ -534,7 +534,7 @@
       "axi_smc_M00_AXI": {
         "interface_ports": [
           "axi_smc/M00_AXI",
-          "digital_echo_0/S_AXI"
+          "digital_echo_0/s_axi"
         ]
       },
       "microblaze_0_M_AXI_DP": {
@@ -589,7 +589,7 @@
           "microblaze_0_local_memory/LMB_Clk",
           "rst_clk_wiz_1_100M/slowest_sync_clk",
           "axi_smc/aclk",
-          "digital_echo_0/S_AXI_ACLK"
+          "digital_echo_0/s_axi_aclk"
         ]
       },
       "reset_rtl_0_1": {
@@ -614,7 +614,7 @@
         "ports": [
           "rst_clk_wiz_1_100M/peripheral_aresetn",
           "axi_smc/aresetn",
-          "digital_echo_0/S_AXI_ARESETN"
+          "digital_echo_0/s_axi_aresetn"
         ]
       }
     },
@@ -624,9 +624,9 @@
           "Data": {
             "segments": {
               "SEG_digital_echo_0_reg0": {
-                "address_block": "/digital_echo_0/S_AXI/reg0",
+                "address_block": "/digital_echo_0/s_axi/reg0",
                 "offset": "0x00010000",
-                "range": "4K"
+                "range": "128"
               },
               "SEG_dlmb_bram_if_cntlr_Mem": {
                 "address_block": "/microblaze_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem",
@@ -653,7 +653,7 @@
       "file": {
         "name": "..\\..\\..\\..\\..\\..\\vitis\\app_component\\build\\app_component.elf",
         "type": "ELF",
-        "checksum": "1890036230",
+        "checksum": "488721696",
         "IsVisible": "1",
         "ScopedToRef": "design_1",
         "ScopedToCell": [
