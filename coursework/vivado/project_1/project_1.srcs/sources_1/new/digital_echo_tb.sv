@@ -132,11 +132,9 @@ module digital_echo_tb();
         do @(posedge aclk); while (!bvalid);
 
         if (bresp != 2'b00)
-            $fatal(1, "AXI write error: addr=%h BRESP=%b",
-                   addr, bresp);
+            $fatal(1, "AXI write error: addr=%h BRESP=%b", addr, bresp);
 
-        $display("[%0t] WRITE addr=%h data=%h",
-                 $time, addr, data);
+        //$display("[%0t] WRITE addr=%h data=%h", $time, addr, data);
 
     endtask
 
@@ -163,11 +161,9 @@ module digital_echo_tb();
         data = rdata;
 
         if (rresp != 2'b00)
-            $fatal(1, "AXI read error: addr=%h RRESP=%b",
-                   addr, rresp);
+            $fatal(1, "AXI read error: addr=%h RRESP=%b", addr, rresp);
 
-        $display("[%0t] READ  addr=%h data=%h",
-                 $time, addr, data);
+        //$display("[%0t] READ  addr=%h data=%h", $time, addr, data);
 
     endtask
 
@@ -198,7 +194,7 @@ module digital_echo_tb();
             axi_write(4*AXI_REG_IDX_IN, write_values[i]);
             axi_read (4*AXI_REG_IDX_OUT, read_values[i]);
             
-            expected_values[i] = (i < d)? write_values[i] : write_values[i] + expected_values[i-d] >>> shift;
+            expected_values[i] = (i < d)? write_values[i] : write_values[i] + (expected_values[i-d] >>> shift);
             if (expected_values[i] > 32'sd32767) begin expected_values[i] = 32'h00007fff; end
             if (expected_values[i] < -32'sd32768) begin expected_values[i] = 32'hFFFF8000; end
             

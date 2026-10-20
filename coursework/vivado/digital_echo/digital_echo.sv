@@ -55,12 +55,15 @@ module digital_echo #(
         AXI_RESP_DECERR = 2'b11
     } axi_resp_e;
 
-    // registers
-    logic [AXI_DATA_WIDTH-1:0] slv_regs [AXI_REG_IDX_SIZEOF-1:0];
-
     // addresses
     logic [AXI_ADDR_WIDTH-1:0] axi_awaddr;
     logic [AXI_ADDR_WIDTH-1:0] axi_araddr;
+    
+    // inner memory
+    logic [AXI_DATA_WIDTH-1:0] d;
+    logic [AXI_DATA_WIDTH-1:0] shift;
+    logic signed [AXI_DATA_WIDTH-1:0] delay_line [8:0];   
+    logic signed [AXI_DATA_WIDTH-1:0] interm_res;
 
     // ----------------------------------------------------
     // write logic
@@ -98,15 +101,45 @@ module digital_echo #(
     // ----------------------------------------------------
     always_ff @(posedge s_axi_aclk) begin
         if (!s_axi_aresetn) begin
-            foreach (slv_regs[i])
-                slv_regs[i] <= '0;
+            d <= 1;
+            shift <= 1;
+            foreach (delay_line[i])
+                delay_line[i] <= '0;
         end else begin
             if (s_axi_wready && s_axi_wvalid && s_axi_awready && s_axi_awvalid) begin
-                logic w_idx = axi_awaddr[AXI_ADDR_WIDTH-1:2];
-                if (w_idx < AXI_REG_IDX_SIZEOF) begin
-                    foreach (s_axi_wstrb[i])
-                        if (s_axi_wstrb[i]) slv_regs[w_idx][(i*8)+:8] <= s_axi_wdata[(i*8)+:8];
-                end
+                unique case (axi_awaddr[AXI_ADDR_WIDTH-1:2])
+                    AXI_REG_IDX_IN: begin
+                        if (s_axi_wstrb[1:0] === '1) begin
+                            interm_res = $signed(s_axi_wdata[15:0]) + (delay_line[d-1] >>> shift);
+                            for(int i = 8; i > 0; i--)
+                                delay_line[i] <= delay_line[i-1];                            
+                            if (interm_res > 32'sd32767)
+                                delay_line[0] <= 32'sd32767;
+                            else if (interm_res < -32'sd32768)
+                                delay_line[0] <= -32'sd32768;
+                            else                                
+                                delay_line[0] <= interm_res;
+                        end
+                    end
+                    AXI_REG_IDX_D: begin
+                        if (s_axi_wstrb[0] && s_axi_wdata[7:0] > 0 && s_axi_wdata[7:0] < 9) begin
+                            d[7:0] <= s_axi_wdata[7:0];
+                        end 
+                    end
+                    AXI_REG_IDX_SHIFT: begin
+                        if (s_axi_wstrb[0] && s_axi_wdata[7:0] > 0 && s_axi_wdata[7:0] < 4) begin
+                            shift[7:0] <= s_axi_wdata[7:0];
+                        end 
+                    end
+                    AXI_REG_IDX_CTRL: begin
+                        if (s_axi_wstrb[0] && s_axi_wdata[7:0] === 8'h01) begin
+                            foreach (delay_line[i])
+                                delay_line[i] <= '0;
+                        end 
+                    end
+                    default: begin
+                    end
+                endcase
             end
         end
     end
@@ -131,15 +164,25 @@ module digital_echo #(
             end
 
             if (s_axi_arready && s_axi_arvalid && !s_axi_rvalid) begin
-                logic r_idx = axi_araddr[AXI_ADDR_WIDTH-1:2];
                 s_axi_rvalid <= 1'b1;
-                if (r_idx < AXI_REG_IDX_SIZEOF) begin
-                    s_axi_rdata <= slv_regs[r_idx]; 
-                    s_axi_rresp <= AXI_RESP_OKAY;
-                end else begin
-                    s_axi_rdata <= 32'hDEADBEEF; 
-                    s_axi_rresp <= AXI_RESP_DECERR;
-                end               
+                unique case (axi_araddr[AXI_ADDR_WIDTH-1:2])
+                    AXI_REG_IDX_OUT: begin
+                        s_axi_rdata <= delay_line[0]; 
+                        s_axi_rresp <= AXI_RESP_OKAY;
+                    end
+                    AXI_REG_IDX_D: begin
+                        s_axi_rdata <= d; 
+                        s_axi_rresp <= AXI_RESP_OKAY;
+                    end
+                    AXI_REG_IDX_SHIFT: begin
+                        s_axi_rdata <= shift; 
+                        s_axi_rresp <= AXI_RESP_OKAY;
+                    end
+                    default: begin
+                        s_axi_rdata <= 32'hDEADBEEF; 
+                        s_axi_rresp <= AXI_RESP_DECERR;
+                    end
+                endcase              
             end else if (s_axi_rvalid && s_axi_rready) begin
                 s_axi_rvalid <= 1'b0;
             end

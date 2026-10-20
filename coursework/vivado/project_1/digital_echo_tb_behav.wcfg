@@ -13,14 +13,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="375.001 ns"></ZoomEndTime>
-      <Cursor1Time time="24.745 ns"></Cursor1Time>
+      <ZoomEndTime time="3,585.001 ns"></ZoomEndTime>
+      <Cursor1Time time="538.009 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="198"></NameColumnWidth>
-      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="22" />
+   <WVObjectSize size="23" />
    <wvobject fp_name="/digital_echo_tb/aclk" type="logic">
       <obj_property name="ElementShortName">aclk</obj_property>
       <obj_property name="ObjectShortName">aclk</obj_property>
@@ -97,16 +97,20 @@
       <obj_property name="ElementShortName">rready</obj_property>
       <obj_property name="ObjectShortName">rready</obj_property>
    </wvobject>
-   <wvobject fp_name="/digital_echo_tb/read_value" type="array">
-      <obj_property name="ElementShortName">read_value[31:0]</obj_property>
-      <obj_property name="ObjectShortName">read_value[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/digital_echo_tb/expected_value" type="array">
-      <obj_property name="ElementShortName">expected_value[31:0]</obj_property>
-      <obj_property name="ObjectShortName">expected_value[31:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/digital_echo_tb/result" type="logic">
       <obj_property name="ElementShortName">result</obj_property>
       <obj_property name="ObjectShortName">result</obj_property>
+   </wvobject>
+   <wvobject fp_name="/digital_echo_tb/dut/d" type="array">
+      <obj_property name="ElementShortName">d[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/digital_echo_tb/dut/shift" type="array">
+      <obj_property name="ElementShortName">shift[31:0]</obj_property>
+      <obj_property name="ObjectShortName">shift[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/digital_echo_tb/dut/delay_line" type="array">
+      <obj_property name="ElementShortName">delay_line[8:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">delay_line[8:0][31:0]</obj_property>
    </wvobject>
 </wave_config>
