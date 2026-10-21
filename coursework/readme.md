@@ -26,8 +26,7 @@
     - Check TCL console to contain verification results (should contain 24 output samples from UART):
         ![mb_system_tb_sim](screenshots/mb_system_tb_sim.png)
 - Implementation
-    - run implementation and observe the following parameters of the module
-        ![implementation](screenshots/implementation.png)
+    - run implementation and generate bitstream
 
 ## Structure of the project
 
@@ -44,7 +43,7 @@
 
 ## Description
 
-### Digital echo module
+### 1. Digital echo module
 
 **Source code**: [digital_echo.sv](vivado/digital_echo/digital_echo.sv)
 
@@ -78,7 +77,7 @@ Module consists of 3 `always_ff` blocks:
 
 Source code of the module has `ARITHM_SHIFT` preprocessor definition. It enables arithmetic shift of delayed value (which corresponds to module requirements). Disabling it logical shift is activated instead, which could be used to test testbench for failures.
 
-### Standalone module testbench
+### 2. Standalone module testbench
 
 **Source code**: [digital_echo_tb.sv](vivado/project_1/project_1.srcs/sources_1/new/digital_echo_tb.sv) 
 
@@ -97,11 +96,11 @@ Testbench consists of 3 tasks and main testing sequence:
     - `D`=4, `SHIFT`=1, `IN`[0] = -1000, and repeats 0 for IN 23 times after first value
     - `D`=2, `SHIFT`=1, `IN` sequence: {30000, 0, 30000, 0, 0, 0}
 
-### MicroBlaze program
+### 3. MicroBlaze program
 
 **Source code**: [main.c](vitis/main.c)
 
-MicroBlaze program, which implements fisrt test case from standalone module testbench main testing sequence.
+MicroBlaze program implements first test case from standalone main testing sequence (previous chapter).
 
 Program sets up `D` and `SHIFT` parameters and runs 24 steps of processing. 
 
@@ -117,7 +116,7 @@ Testbench consists of 2 modules:
 - `uart_monitor` - helps to read data from UART and prints it to simulation console
 - `mb_digital_echo_tb` - main testing module, contain testing system and uart_monitor instanses, sets up `clk` and `rst` signals and waits 9ms to let UART transmit all expected data.
 
-### MicroBlaze based system design
+### 4. MicroBlaze based system design
 
 Design consists of the folowing parts:
 - MicroBlaze IP - runs simple testing code
@@ -135,4 +134,20 @@ Design was validated with `Validate Design` Vivado feature:
 
 ![validate](screenshots/validate.png)
 
-### Implementation
+### 5. Implementation
+
+Implementation phase shows the following results:
+- Utilization:
+
+    ![utilization](screenshots/utilization.png)
+- Timing Summary:
+
+    ![timing_summary](screenshots/timing_summary.png)
+- Timing Details:
+
+    ![timing_details](screenshots/timing_details.png)
+
+
+As it can be seen from timing reports, target module didn't meet timing requirements (100 Mhz clock).
+Bottleneck is d/delay_line indexing (line 119 of [digital_echo.sv](vivado/digital_echo/digital_echo.sv)).
+Ways to fix it: rewrite code somehow (probably with pipelining) or decrease system clock frequency.
