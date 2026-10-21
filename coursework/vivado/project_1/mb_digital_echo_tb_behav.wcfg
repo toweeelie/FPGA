@@ -16,13 +16,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="500.095001 us"></ZoomEndTime>
-      <Cursor1Time time="62.944747 us"></Cursor1Time>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="15.000095001 ms"></ZoomEndTime>
+      <Cursor1Time time="5.720519066 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="198"></NameColumnWidth>
-      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+      <NameColumnWidth column_width="232"></NameColumnWidth>
+      <ValueColumnWidth column_width="73"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="3" />
    <wvobject fp_name="/mb_digital_echo_tb/clk" type="logic">
@@ -45,6 +45,5 @@
       <obj_property name="CellHeight">36</obj_property>
       <obj_property name="ElementShortName">s_axi</obj_property>
       <obj_property name="ObjectShortName">s_axi</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

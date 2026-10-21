@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xEF0F8C9BF724E7DB",
+      "boundary_crc": "0xAEEDB58675AFD503",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../project_1.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -23,7 +23,31 @@
       "clk_wiz_1": "",
       "rst_clk_wiz_1_100M": "",
       "digital_echo_0": "",
-      "axi_smc": ""
+      "axi_smc": "",
+      "axi_uartlite_0": ""
+    },
+    "interface_ports": {
+      "uart_rtl_0": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:uart:1.0",
+        "vlnv": "xilinx.com:interface:uart_rtl:1.0",
+        "hdl_attributes": {
+          "LOCKED": {
+            "value": "FALSE",
+            "value_src": "default"
+          }
+        },
+        "port_maps": {
+          "RxD": {
+            "physical_name": "uart_rtl_0_rxd",
+            "direction": "I"
+          },
+          "TxD": {
+            "physical_name": "uart_rtl_0_txd",
+            "direction": "O"
+          }
+        }
+      }
     },
     "ports": {
       "clk_100MHz": {
@@ -465,6 +489,9 @@
         "inst_hier_path": "axi_smc",
         "has_run_ip_tcl": "true",
         "parameters": {
+          "NUM_MI": {
+            "value": "2"
+          },
           "NUM_SI": {
             "value": "1"
           }
@@ -483,11 +510,12 @@
               }
             },
             "bridges": [
-              "M00_AXI"
+              "M00_AXI",
+              "M01_AXI"
             ],
             "bd_attributes": {
               "BRIDGES": {
-                "value": "M00_AXI",
+                "value": "M00_AXI:M01_AXI",
                 "value_src": "auto"
               },
               "TYPE": {
@@ -526,6 +554,50 @@
                 "value_src": "default"
               }
             }
+          },
+          "M01_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "NUM_READ_OUTSTANDING": {
+                "value": "1"
+              },
+              "NUM_READ_THREADS": {
+                "value": "1"
+              },
+              "NUM_WRITE_OUTSTANDING": {
+                "value": "1"
+              },
+              "NUM_WRITE_THREADS": {
+                "value": "1"
+              },
+              "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "WUSER_BITS_PER_BYTE": {
+                "value": "0"
+              }
+            },
+            "bd_attributes": {
+              "TYPE": {
+                "value": "interior",
+                "value_src": "default"
+              }
+            }
+          }
+        }
+      },
+      "axi_uartlite_0": {
+        "vlnv": "xilinx.com:ip:axi_uartlite:2.0",
+        "ip_revision": "39",
+        "xci_name": "design_1_axi_uartlite_0_0",
+        "xci_path": "ip\\design_1_axi_uartlite_0_0\\design_1_axi_uartlite_0_0.xci",
+        "inst_hier_path": "axi_uartlite_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_BAUDRATE": {
+            "value": "230400"
           }
         }
       }
@@ -535,6 +607,18 @@
         "interface_ports": [
           "axi_smc/M00_AXI",
           "digital_echo_0/s_axi"
+        ]
+      },
+      "axi_smc_M01_AXI": {
+        "interface_ports": [
+          "axi_smc/M01_AXI",
+          "axi_uartlite_0/S_AXI"
+        ]
+      },
+      "axi_uartlite_0_UART": {
+        "interface_ports": [
+          "uart_rtl_0",
+          "axi_uartlite_0/UART"
         ]
       },
       "microblaze_0_M_AXI_DP": {
@@ -589,7 +673,8 @@
           "microblaze_0_local_memory/LMB_Clk",
           "rst_clk_wiz_1_100M/slowest_sync_clk",
           "axi_smc/aclk",
-          "digital_echo_0/s_axi_aclk"
+          "digital_echo_0/s_axi_aclk",
+          "axi_uartlite_0/s_axi_aclk"
         ]
       },
       "reset_rtl_0_1": {
@@ -614,7 +699,8 @@
         "ports": [
           "rst_clk_wiz_1_100M/peripheral_aresetn",
           "axi_smc/aresetn",
-          "digital_echo_0/s_axi_aresetn"
+          "digital_echo_0/s_axi_aresetn",
+          "axi_uartlite_0/s_axi_aresetn"
         ]
       }
     },
@@ -623,6 +709,11 @@
         "address_spaces": {
           "Data": {
             "segments": {
+              "SEG_axi_uartlite_0_Reg": {
+                "address_block": "/axi_uartlite_0/S_AXI/Reg",
+                "offset": "0x40600000",
+                "range": "64K"
+              },
               "SEG_digital_echo_0_reg0": {
                 "address_block": "/digital_echo_0/s_axi/reg0",
                 "offset": "0x00010000",
@@ -653,7 +744,7 @@
       "file": {
         "name": "..\\..\\..\\..\\..\\..\\vitis\\app_component\\build\\app_component.elf",
         "type": "ELF",
-        "checksum": "0",
+        "checksum": "4050589903",
         "IsVisible": "1",
         "ScopedToRef": "design_1",
         "ScopedToCell": [

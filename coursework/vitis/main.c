@@ -19,12 +19,10 @@ int main(void)
     Xil_Out32(ECHO_BASEADDR+DIGITAL_ECHO_0_D, 4);
     Xil_Out32(ECHO_BASEADDR+DIGITAL_ECHO_0_SHIFT, 1);
     
-    Xil_Out32(ECHO_BASEADDR+DIGITAL_ECHO_0_IN, 1000);
-    value = Xil_In32(ECHO_BASEADDR+DIGITAL_ECHO_0_OUT);
-    for (int i = 1; i < 24; i++)
+    for (int i = 0; i < 24; i++)
     {
-        Xil_Out32(ECHO_BASEADDR+DIGITAL_ECHO_0_IN, 0);
+        Xil_Out32(ECHO_BASEADDR+DIGITAL_ECHO_0_IN, (i)? 0 : 1000);
         value = Xil_In32(ECHO_BASEADDR+DIGITAL_ECHO_0_OUT);
-        xil_printf("Iteration = %02d, IP response = 0x%08lx\n", i, (unsigned long)value);
+        xil_printf("%02d:%04x\n", i, (u16)value);
     }
 }
