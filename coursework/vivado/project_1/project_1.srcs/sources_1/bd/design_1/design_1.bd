@@ -744,7 +744,7 @@
       "file": {
         "name": "..\\..\\..\\..\\..\\..\\vitis\\app_component\\build\\app_component.elf",
         "type": "ELF",
-        "checksum": "2638200439",
+        "checksum": "317892730",
         "IsVisible": "1",
         "ScopedToRef": "design_1",
         "ScopedToCell": [

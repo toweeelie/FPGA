@@ -136,7 +136,7 @@ Design was validated with `Validate Design` Vivado feature:
 
 ### 5. Implementation
 
-Implementation phase shows the following results:
+First time implementation phase show the following results:
 - Utilization:
 
     ![utilization](screenshots/utilization.png)
@@ -147,7 +147,36 @@ Implementation phase shows the following results:
 
     ![timing_details](screenshots/timing_details.png)
 
-
 As it can be seen from timing reports, target module didn't meet timing requirements (100 Mhz clock).
+
 Bottleneck is d/delay_line indexing (line 119 of [digital_echo.sv](vivado/digital_echo/digital_echo.sv)).
-Ways to fix it: rewrite code somehow (probably with pipelining) or decrease system clock frequency.
+
+Decreasing the number of bits for d index with following fix allow to meet requested timings: 
+
+| Before | After |
+|---|---|
+| parameter int AXI_DATA_WIDTH = 32 | parameter int AXI_DATA_WIDTH = 32 |
+| parameter int MAX_D_VALUE = 8 | parameter int MAX_D_VALUE = 8 |
+|...|...|
+| logic [AXI_DATA_WIDTH-1:0] d; | logic [AXI_DATA_WIDTH-1:0] d; |
+| logic signed [AXI_DATA_WIDTH-1:0] delay_line [MAX_D_VALUE:0];  | logic signed [AXI_DATA_WIDTH-1:0] delay_line [MAX_D_VALUE:0];  |
+| logic signed [AXI_DATA_WIDTH-1:0] interm_res; | logic signed [AXI_DATA_WIDTH-1:0] interm_res; |
+|  | logic [$clog2(MAX_D_VALUE)-1:0] d_idx; |
+|...|...|
+|  | d_idx = d[$clog2(MAX_D_VALUE)-1:0]-1; |
+| interm_res = $signed(s_axi_wdata[15:0]) + (delay_line[d-1] >>> shift); | interm_res = $signed(s_axi_wdata[15:0]) + (delay_line[d_idx] >>> shift); |
+
+Updated implementation results:
+- Utilization:
+
+    ![utilization_fixed](screenshots/utilization_fixed.png)
+- Timing Summary:
+
+    ![timing_summary_fixed](screenshots/timing_summary_fixed.png)
+- Timing Details:
+
+    ![timing_details_fixed](screenshots/timing_details_fixed.png)
+
+There is still worst case inside target module, but at least it meets timing requirements. Further timing improvements are possible with pipelining or decreasing system clock frequency.
+
+Module was retested with standalone and system testbenches to prove the same functionality as before mentioned fix.

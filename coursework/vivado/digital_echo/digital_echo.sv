@@ -69,6 +69,7 @@ module digital_echo #(
     logic [AXI_DATA_WIDTH-1:0] shift;
     logic signed [AXI_DATA_WIDTH-1:0] delay_line [MAX_D_VALUE:0];   
     logic signed [AXI_DATA_WIDTH-1:0] interm_res;
+    logic [$clog2(MAX_D_VALUE)-1:0] d_idx;
 
     // ----------------------------------------------------
     // write logic
@@ -115,10 +116,11 @@ module digital_echo #(
                 unique case (axi_awaddr[AXI_ADDR_WIDTH-1:2])
                     AXI_REG_IDX_IN: begin
                         if (s_axi_wstrb[1:0] === '1) begin
+                            d_idx = d[$clog2(MAX_D_VALUE)-1:0]-1;
                         `ifdef ARITHM_SHIFT
-                            interm_res = $signed(s_axi_wdata[15:0]) + (delay_line[d-1] >>> shift);
+                            interm_res = $signed(s_axi_wdata[15:0]) + (delay_line[d_idx] >>> shift);
                         `else
-                            interm_res = $signed(s_axi_wdata[15:0]) + (delay_line[d-1] >> shift);
+                            interm_res = $signed(s_axi_wdata[15:0]) + (delay_line[d_idx] >> shift);
                         `endif
                             for(int i = MAX_D_VALUE; i > 0; i--)
                                 delay_line[i] <= delay_line[i-1];                            
