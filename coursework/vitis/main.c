@@ -25,4 +25,7 @@ int main(void)
         value = Xil_In32(ECHO_BASEADDR+DIGITAL_ECHO_0_OUT);
         xil_printf("%02d:%04x\n", i, (u16)value);
     }
+
+    xil_printf("IDLE\n");
+    while (1) {}
 }

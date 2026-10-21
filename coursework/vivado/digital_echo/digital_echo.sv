@@ -1,3 +1,6 @@
+
+`define ARITHM_SHIFT 1
+
 package digital_echo_p;
     typedef enum logic [2:0] {
         AXI_REG_IDX_IN,
@@ -112,7 +115,11 @@ module digital_echo #(
                 unique case (axi_awaddr[AXI_ADDR_WIDTH-1:2])
                     AXI_REG_IDX_IN: begin
                         if (s_axi_wstrb[1:0] === '1) begin
+                        `ifdef ARITHM_SHIFT
                             interm_res = $signed(s_axi_wdata[15:0]) + (delay_line[d-1] >>> shift);
+                        `else
+                            interm_res = $signed(s_axi_wdata[15:0]) + (delay_line[d-1] >> shift);
+                        `endif
                             for(int i = MAX_D_VALUE; i > 0; i--)
                                 delay_line[i] <= delay_line[i-1];                            
                             if (interm_res > 32'sd32767)

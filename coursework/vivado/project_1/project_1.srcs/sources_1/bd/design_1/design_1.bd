@@ -673,8 +673,8 @@
           "microblaze_0_local_memory/LMB_Clk",
           "rst_clk_wiz_1_100M/slowest_sync_clk",
           "axi_smc/aclk",
-          "digital_echo_0/s_axi_aclk",
-          "axi_uartlite_0/s_axi_aclk"
+          "axi_uartlite_0/s_axi_aclk",
+          "digital_echo_0/s_axi_aclk"
         ]
       },
       "reset_rtl_0_1": {
@@ -699,8 +699,8 @@
         "ports": [
           "rst_clk_wiz_1_100M/peripheral_aresetn",
           "axi_smc/aresetn",
-          "digital_echo_0/s_axi_aresetn",
-          "axi_uartlite_0/s_axi_aresetn"
+          "axi_uartlite_0/s_axi_aresetn",
+          "digital_echo_0/s_axi_aresetn"
         ]
       }
     },
@@ -744,7 +744,7 @@
       "file": {
         "name": "..\\..\\..\\..\\..\\..\\vitis\\app_component\\build\\app_component.elf",
         "type": "ELF",
-        "checksum": "4050589903",
+        "checksum": "2638200439",
         "IsVisible": "1",
         "ScopedToRef": "design_1",
         "ScopedToCell": [

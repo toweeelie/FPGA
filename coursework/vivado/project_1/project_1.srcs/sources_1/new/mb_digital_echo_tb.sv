@@ -97,7 +97,7 @@ module mb_digital_echo_tb();
         repeat (10) @(posedge clk);
         rst = 1'b1;
         
-        #8ms;
+        #9ms;
     
         $finish;
     end
