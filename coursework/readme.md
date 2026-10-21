@@ -149,9 +149,9 @@ First time implementation phase show the following results:
 
 As it can be seen from timing reports, target module didn't meet timing requirements (100 Mhz clock).
 
-Bottleneck is d/delay_line indexing (line 119 of [digital_echo.sv](vivado/digital_echo/digital_echo.sv)).
+Bottleneck is `d`/`delay_line` indexing (line 119 of previous `digital_echo.sv` version, please see changes [here](https://github.com/toweeelie/FPGA/commit/37ab12e4eb7982e6729888051b69fc86696245dd#diff-9b1bad32a2eead0888ff72f15f8da692fa7ee491fc82301fc45d5c0e3beefe09)).
 
-Decreasing the number of bits for d index with following fix allow to meet requested timings: 
+Decreasing the number of bits for `d` index with following fix allow to meet requested timings: 
 
 | Before | After |
 |---|---|
